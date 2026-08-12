@@ -1,0 +1,59 @@
+generated: '2026-08-12'
+method: derived
+source: openapi/effect-photonics-effect-v1-api-openapi.yml, openapi/effect-photonics-mcp-api-openapi.yml,
+  openapi/effect-photonics-oembed-1-0-api-openapi.yml, openapi/effect-photonics-root-api-openapi.yml,
+  openapi/effect-photonics-wp-abilities-v1-api-openapi.yml, openapi/effect-photonics-wp-v2-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  - oauth2
+  api_key_in:
+  - header
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: mcpOAuth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://effectphotonics.com/oauth/authorize
+    tokenUrl: https://effectphotonics.com/oauth/token
+    scopes: 1
+  description: OAuth 2.1 authorization-code + PKCE (S256), as advertised by the provider's RFC
+    8414 metadata at https://effectphotonics.com/.well-known/oauth-authorization-server (fetched
+    2026-08-12, HTTP 200). Guards the `mcp` namespace; the protected-resource metadata (RFC
+    9728) names https://effectphotonics.com/wp-json/mcp/mcp-oauth-server.
+  sources:
+  - openapi/effect-photonics-effect-v1-api-openapi.yml
+  - openapi/effect-photonics-mcp-api-openapi.yml
+  - openapi/effect-photonics-oembed-1-0-api-openapi.yml
+  - openapi/effect-photonics-root-api-openapi.yml
+  - openapi/effect-photonics-wp-abilities-v1-api-openapi.yml
+  - openapi/effect-photonics-wp-v2-api-openapi.yml
+- name: wpNonce
+  type: apiKey
+  in: header
+  parameter: X-WP-Nonce
+  description: WordPress cookie-authentication nonce. Advertised by the live server in its Access-Control-Allow-Headers
+    response header (Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type).
+  sources:
+  - openapi/effect-photonics-effect-v1-api-openapi.yml
+  - openapi/effect-photonics-mcp-api-openapi.yml
+  - openapi/effect-photonics-oembed-1-0-api-openapi.yml
+  - openapi/effect-photonics-root-api-openapi.yml
+  - openapi/effect-photonics-wp-abilities-v1-api-openapi.yml
+  - openapi/effect-photonics-wp-v2-api-openapi.yml
+- name: applicationPassword
+  type: http
+  scheme: basic
+  description: WordPress Application Passwords — HTTP Basic with a user-issued application password.
+    The live discovery document at https://effectphotonics.com/wp-json/ names https://effectphotonics.com/wp-admin/authorize-application.php
+    as the authorization endpoint.
+  sources:
+  - openapi/effect-photonics-effect-v1-api-openapi.yml
+  - openapi/effect-photonics-mcp-api-openapi.yml
+  - openapi/effect-photonics-oembed-1-0-api-openapi.yml
+  - openapi/effect-photonics-root-api-openapi.yml
+  - openapi/effect-photonics-wp-abilities-v1-api-openapi.yml
+  - openapi/effect-photonics-wp-v2-api-openapi.yml

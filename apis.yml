@@ -1,18 +1,130 @@
 aid: effect-photonics
-name: Effect Photonics
-description: 'Effect Photonics is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: EFFECT Photonics
+description: >-
+  EFFECT Photonics is an optical-semiconductor company headquartered at High Tech Campus 37 in
+  Eindhoven, the Netherlands, with sites in the United Kingdom, the United States and Taiwan. Spun out
+  of Eindhoven University of Technology, it designs and manufactures coherent optical transceiver
+  subsystems and monolithically integrated Indium Phosphide (InP) photonic integrated circuits,
+  including its pico and nano Integrable Tunable Laser Assemblies for 100G, 400G and 800G coherent
+  links across telecom access and metro networks, data-center interconnect and AI scale-across
+  infrastructure. It operates no developer API programme and publishes no product, network-management
+  or transceiver-control API, no developer portal, no SDK and no pricing. It is catalogued here because
+  its corporate website runs a live WordPress REST API with 290 discoverable routes — including a
+  publicly readable optical-product catalogue with hardware taxonomies (product line, form factor,
+  output power, tuning range, operating temperature, target application, management interface) and a
+  first-party `effect/v1` namespace — and because that same install exposes two Model Context Protocol
+  servers guarded by an OAuth 2.1 authorization server the host advertises through RFC 8414 and
+  RFC 9728 metadata.
+image: https://effectphotonics.com/wp-content/uploads/2026/05/EFFECT-Photonics_logo-color.svg
 url: https://raw.githubusercontent.com/api-evangelist/effect-photonics/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: enriched
+x-tier-reason: enrichment pass 2026-08-12
 specificationVersion: '0.20'
 created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
-apis: []
+- Photonics
+- Optical Networking
+- Optical Transceivers
+- Photonic Integrated Circuits
+- Semiconductors
+- Telecommunications
+- Data Center Interconnect
+- Hardware
+- Model Context Protocol
+- WordPress
+- Netherlands
+apis:
+- aid: effect-photonics:effect-photonics-wp-v2-api
+  name: EFFECT Photonics Wp/v2 API
+  description: >-
+    WordPress core content API (posts, pages, media, taxonomies, users, settings) plus the site's
+    custom post types — products, careers, events, partners, team members and FAQs — and the optical
+    hardware taxonomies attached to products. Published content reads anonymously (HTTP 200 observed);
+    writes and privileged reads are capability-gated.
+  humanURL: https://effectphotonics.com/wp-json/
+  baseURL: https://effectphotonics.com/wp-json/
+  tags:
+  - wp/v2
+  properties:
+  - type: OpenAPI
+    url: openapi/effect-photonics-wp-v2-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/effect-photonics-tool-crosswalk.yml
+  - type: DataModel
+    url: data-model/effect-photonics-data-model.yml
+- aid: effect-photonics:effect-photonics-effect-v1-api
+  name: EFFECT Photonics Effect/v1 API
+  description: >-
+    EFFECT Photonics' own custom REST namespace — a careers synchronisation trigger
+    (POST /effect/v1/careers/sync, observed HTTP 401 anonymously) and a GLB 3D-model position
+    endpoint used by the product visualiser (GET/POST /effect/v1/glb-positions/{id}).
+  humanURL: https://effectphotonics.com/wp-json/effect/v1
+  baseURL: https://effectphotonics.com/wp-json/
+  tags:
+  - effect/v1
+  properties:
+  - type: OpenAPI
+    url: openapi/effect-photonics-effect-v1-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/effect-photonics-tool-crosswalk.yml
+  - type: DataModel
+    url: data-model/effect-photonics-data-model.yml
+- aid: effect-photonics:effect-photonics-mcp-api
+  name: EFFECT Photonics MCP API
+  description: >-
+    Model Context Protocol servers exposed by the WordPress MCP adapter. Both servers require
+    authentication (observed HTTP 401 anonymously); the OAuth server answers with a correct RFC 9728
+    Bearer challenge naming the protected-resource metadata document.
+  humanURL: https://effectphotonics.com/wp-json/mcp
+  baseURL: https://effectphotonics.com/wp-json/
+  tags:
+  - mcp
+  properties:
+  - type: OpenAPI
+    url: openapi/effect-photonics-mcp-api-openapi.yml
+  - type: MCPServer
+    url: mcp/effect-photonics-mcp.yml
+  - type: ToolCrosswalk
+    url: mcp/effect-photonics-tool-crosswalk.yml
+- aid: effect-photonics:effect-photonics-wp-abilities-v1-api
+  name: EFFECT Photonics Wp Abilities/v1 API
+  description: >-
+    WordPress Abilities API — the registry of named abilities an agent may discover and run, and the
+    surface the MCP adapter projects into tools. Read access is capability-gated (observed HTTP 401
+    anonymously).
+  humanURL: https://effectphotonics.com/wp-json/wp-abilities/v1
+  baseURL: https://effectphotonics.com/wp-json/
+  tags:
+  - wp-abilities/v1
+  properties:
+  - type: OpenAPI
+    url: openapi/effect-photonics-wp-abilities-v1-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/effect-photonics-tool-crosswalk.yml
+- aid: effect-photonics:effect-photonics-oembed-1-0-api
+  name: EFFECT Photonics Oembed/1.0 API
+  description: oEmbed discovery and proxy endpoints.
+  humanURL: https://effectphotonics.com/wp-json/oembed/1.0
+  baseURL: https://effectphotonics.com/wp-json/
+  tags:
+  - oembed/1.0
+  properties:
+  - type: OpenAPI
+    url: openapi/effect-photonics-oembed-1-0-api-openapi.yml
+- aid: effect-photonics:effect-photonics-root-api
+  name: EFFECT Photonics Root API
+  description: REST API index / namespace discovery, plus the WordPress batch/v1 request batching endpoint.
+  humanURL: https://effectphotonics.com/wp-json/
+  baseURL: https://effectphotonics.com/wp-json/
+  tags:
+  - root
+  properties:
+  - type: OpenAPI
+    url: openapi/effect-photonics-root-api-openapi.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +132,97 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
+  url: https://effectphotonics.com/
+- type: About
+  url: https://effectphotonics.com/about/
+- type: Products
+  url: https://effectphotonics.com/products/
+- type: Solutions
+  url: https://effectphotonics.com/solutions/
+- type: Newsroom
+  url: https://effectphotonics.com/newsroom/
+- type: Blog
+  url: https://effectphotonics.com/newsroom/
+- type: BlogRSS
+  url: https://effectphotonics.com/feed/
+- type: Support
+  url: https://effectphotonics.com/get-in-touch/support/
+- type: Contact
+  url: https://effectphotonics.com/get-in-touch/
+- type: FAQ
+  url: https://effectphotonics.com/faq/
+- type: Careers
+  url: https://effectphotonics.com/careers/
+- type: Investors
+  url: https://effectphotonics.com/investors/
+- type: Events
+  url: https://effectphotonics.com/events/
+- type: Partners
+  url: https://effectphotonics.com/find-a-partner/
+- type: TermsOfService
+  url: https://effectphotonics.com/terms-conditions/
+- type: PrivacyPolicy
+  url: https://effectphotonics.com/privacy-policy/
+- type: CookiePolicy
+  url: https://effectphotonics.com/cookie-policy/
+- type: Compliance
+  url: https://effectphotonics.com/newsroom/iso-9001-certification-reaffirms-effect-photonics-commitment-to-quality-across-operations/
+- type: SecondaryMarket
   url: https://www.nasdaqprivatemarket.com/
+- type: OpenAPI
+  url: openapi/_original/effect-photonics-wp-rest-openapi.yml
+- type: Overlay
+  url: overlays/effect-photonics-wp-rest-overlay.yaml
+- type: MCPServer
+  url: mcp/effect-photonics-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/effect-photonics-tool-crosswalk.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/effect-photonics-llms.txt
+- type: WellKnown
+  url: well-known/effect-photonics-well-known.yml
+- type: Authentication
+  url: authentication/effect-photonics-authentication.yml
+- type: OAuthScopes
+  url: scopes/effect-photonics-scopes.yml
+- type: Conventions
+  url: conventions/effect-photonics-conventions.yml
+- type: ErrorCatalog
+  url: errors/effect-photonics-problem-types.yml
+- type: DataModel
+  url: data-model/effect-photonics-data-model.yml
+- type: Lifecycle
+  url: lifecycle/effect-photonics-lifecycle.yml
+- type: Conformance
+  url: conformance/effect-photonics-conformance.yml
+- type: DomainSecurity
+  url: security/effect-photonics-domain-security.yml
+x-enrichment:
+  date: '2026-08-12'
+  status: enriched
+  artifacts_added: 30
+  pass: local-v1
+x-enrichment-notes: >-
+  Contract discovery (STEP 0b) is what made this profile: effectphotonics.com/openapi.json,
+  /swagger.json, /api-docs, /docs and /graphql all 404, but /wp-json/ returned a live 290-route
+  WordPress discovery document whose namespaces include `mcp`, `wp-abilities/v1` and a first-party
+  `effect/v1`. Deliberately absent, each a verified negative on 2026-08-12: AgentCard
+  (/.well-known/agent-card.json and /.well-known/agent.json both 404, so nothing was written);
+  SecurityTxt and Security (/.well-known/security.txt 404, no disclosure page, no bug bounty);
+  TrustCenter (trust.effectphotonics.com answers a wildcard A record but fails TLS, curl exit 60);
+  StatusPage (same wildcard/TLS failure on status.effectphotonics.com, no third-party status page);
+  Deprecation (no policy, no RFC 8594 headers); Idempotency (no idempotency contract exists on this
+  surface); SDKs and Packages (nothing first-party on npm, PyPI or any other registry, and no GitHub
+  organisation under effectphotonics, effect-photonics or EffectPhotonics — all three 404 on the
+  GitHub API); AsyncAPI and Webhooks (no event surface); ChangeLog (the newsroom is company news, not
+  a change record); and Postman, Pricing, SignUp, Roadmap, Documentation, DeveloperPortal,
+  APIReference, GettingStarted, CLI, Sandbox and Components. plans/ and rate-limits/ are written with
+  plan_count 0 and limit_count 0 and are intentionally NOT wired as pointers, because a zero is a
+  recorded absence, not a published surface. The Compliance pointer is the company's ISO 9001 quality
+  certification announcement plus its published RoHS/REACH/IEC 60825-1 declarations — product
+  compliance, not a security attestation. repair-api-bases.py reports `marketing-base-present` for
+  this repo; it was reviewed and left alone, because the derived specs deliberately use the origin
+  https://effectphotonics.com as servers[] with /wp-json carried in every path, so rewriting the base
+  to https://effectphotonics.com/wp-json would double the prefix on all 439 operations.

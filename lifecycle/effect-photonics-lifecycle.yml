@@ -1,0 +1,62 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  Live probes of https://effectphotonics.com and its subdomains on 2026-08-12, plus
+  openapi/_original/effect-photonics-wp-rest-openapi.yml
+summary: >-
+  EFFECT Photonics publishes no API lifecycle commitments of any kind. There is no developer portal
+  to carry them, so versioning is whatever WordPress' namespace convention implies, and there is no
+  deprecation policy, no SLA, no status page and no changelog. Every negative below was probed, not
+  assumed.
+versioning:
+  scheme: uri-namespace
+  current: wp/v2
+  namespaces_live: [wp/v2, wp-abilities/v1, mcp, oembed/1.0, effect/v1]
+  docs: null
+  policy: null
+  note: >-
+    The version lives in the namespace segment. WordPress upstream governs wp/v2, wp-abilities/v1 and
+    oembed/1.0; `effect/v1` is the site's own namespace and carries a v1 label with no published
+    contract behind it.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No Sunset or Deprecation response header (RFC 8594) was observed on any probed endpoint, and no
+    deprecation policy page exists. No `deprecated: true` operation appears in the derived spec
+    because the route-discovery document carries no deprecation flag.
+deprecated_operations: []
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: null
+  probed:
+  - {host: 'status.effectphotonics.com', dns: 'wildcard A 185.245.88.50', https: 'TLS handshake failure (curl exit 60 — certificate does not cover this name)'}
+  note: >-
+    The domain answers every subdomain from a wildcard A record, so DNS resolution alone is not
+    evidence of a service. status.effectphotonics.com does not present a valid certificate and
+    serves nothing. No third-party status page (Statuspage, Instatus, Better Stack) was found. No
+    StatusPage pointer is emitted.
+changelog:
+  url: null
+  note: >-
+    No API or product changelog. The newsroom at https://effectphotonics.com/newsroom/ is a dated
+    press-release and technical-article feed (144 posts observed, RSS at /feed/), which is a company
+    news stream rather than a change record for any interface, so it is wired as Blog/BlogRSS and
+    not as ChangeLog.
+support:
+  url: https://effectphotonics.com/get-in-touch/support/
+  note: >-
+    Human sales/engineering support, reached by form. Product support (RMA, integration, firmware,
+    datasheets) is described in the FAQ collection; none of it is API support.
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - {url: 'https://status.effectphotonics.com/', http_status: null, error: 'curl 60 — SSL certificate does not match host'}
+  - {url: 'https://developer.effectphotonics.com/', http_status: null, error: 'curl 60 — SSL certificate does not match host'}
+  - {url: 'https://docs.effectphotonics.com/', http_status: null, error: 'curl 60 — SSL certificate does not match host'}
+  - {url: 'https://api.effectphotonics.com/', http_status: null, error: 'curl 60 — SSL certificate does not match host'}
+  - {url: 'https://effectphotonics.com/docs', http_status: 404}
+  - {url: 'https://effectphotonics.com/api-docs', http_status: 404}

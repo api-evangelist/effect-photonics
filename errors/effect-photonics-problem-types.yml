@@ -1,0 +1,76 @@
+generated: '2026-08-12'
+method: derived
+source: >-
+  Live responses observed on https://effectphotonics.com/wp-json/* on 2026-08-12, plus the 4xx
+  responses declared in openapi/_original/effect-photonics-wp-rest-openapi.yml
+format: wordpress-rest
+rfc9457: false
+envelope:
+  content_type: application/json
+  shape: '{"code": "<machine string>", "message": "<human string>", "data": {"status": <int>}}'
+  note: >-
+    WordPress' own error envelope, not RFC 9457 problem+json. There is no `type` URI, no `instance`,
+    and no problem-type registry — the `code` string is the only machine-readable discriminator, and
+    the provider publishes no reference for it. Every code below was observed on the wire; none was
+    copied from documentation, because the provider publishes none.
+problems:
+- status: 401
+  code: rest_forbidden
+  title: Sorry, you are not allowed to do that.
+  observed_on:
+  - https://effectphotonics.com/wp-json/mcp/mcp-adapter-default-server
+  - https://effectphotonics.com/wp-json/wp-abilities/v1/abilities
+  - https://effectphotonics.com/wp-json/effect/v1/careers/sync
+  remediation: >-
+    Authenticate with an application password (HTTP Basic) or a cookie plus X-WP-Nonce, held by a
+    user with the required capability. The generic WordPress capability failure.
+- status: 401
+  code: mcp_unauthorized
+  title: MCP authentication required.
+  observed_on:
+  - https://effectphotonics.com/wp-json/mcp/mcp-oauth-server
+  www_authenticate: >-
+    Bearer realm="https://effectphotonics.com",
+    resource_metadata="https://effectphotonics.com/.well-known/oauth-protected-resource"
+  remediation: >-
+    Follow the RFC 9728 challenge to the protected-resource metadata, then the RFC 8414 authorization
+    server metadata, and obtain a bearer token for the `mcp` scope via authorization_code + PKCE
+    (S256). Public clients only — token_endpoint_auth_methods_supported is ["none"].
+- status: 404
+  code: effect_invalid_attachment
+  title: Not an attachment.
+  observed_on:
+  - https://effectphotonics.com/wp-json/effect/v1/glb-positions/1
+  remediation: >-
+    Pass the id of a media attachment (a GLB 3D model asset), not an arbitrary post id. A
+    first-party error code from the site's own effect/v1 namespace.
+- status: 404
+  code: rest_no_route
+  title: No route was found matching the URL and request method.
+  source_operation: openapi/_original/effect-photonics-wp-rest-openapi.yml
+  note: >-
+    Declared as the 404 response on every derived operation. WordPress' standard unrouted-request
+    error; not separately re-observed for each path.
+- status: 400
+  code: rest_invalid_param
+  title: Invalid parameter(s).
+  note: >-
+    WordPress' standard parameter-validation failure, carrying data.params with the offending
+    argument names. Applies to every operation whose route-discovery entry declares typed or
+    enumerated args — which is most of the 439 derived operations.
+gaps:
+- >-
+  No published error reference exists. EFFECT Photonics operates no developer portal, so titles and
+  remediation above are derived from observed behaviour and from WordPress core semantics, not from
+  a provider document.
+- >-
+  Codes emitted by the MCP tool layer behind the OAuth wall could not be enumerated; tools/list is
+  401 anonymously.
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - {url: 'https://effectphotonics.com/wp-json/mcp/mcp-oauth-server', http_status: 401, code: mcp_unauthorized}
+  - {url: 'https://effectphotonics.com/wp-json/mcp/mcp-adapter-default-server', http_status: 401, code: rest_forbidden}
+  - {url: 'https://effectphotonics.com/wp-json/wp-abilities/v1/abilities', http_status: 401, code: rest_forbidden}
+  - {url: 'https://effectphotonics.com/wp-json/effect/v1/careers/sync', http_status: 401}
+  - {url: 'https://effectphotonics.com/wp-json/effect/v1/glb-positions/1', http_status: 404, code: effect_invalid_attachment}

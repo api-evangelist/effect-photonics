@@ -1,0 +1,30 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  Live response headers observed on https://effectphotonics.com/wp-json/ and
+  https://effectphotonics.com/wp-json/wp/v2/posts on 2026-08-12
+limit_count: 0
+rate_limits: []
+note: >-
+  No rate limits are published and none are signalled. EFFECT Photonics has no developer
+  documentation in which to state limits, and no RateLimit-*, X-RateLimit-* or Retry-After header
+  appeared on any observed response. The origin is fronted by LiteSpeed cache (x-litespeed-cache:
+  hit), which will absorb repeat reads of published content, but that is a cache, not a quota, and it
+  gives an agent no runtime signal. limit_count is 0 because nothing is published or emitted — an
+  honest zero, not an unchecked field.
+response_headers_observed:
+  rate_limit_headers: []
+  present: [content-type, link, etag, vary, x-content-type-options, x-robots-tag, allow,
+    access-control-expose-headers, access-control-allow-headers, x-litespeed-cache, cache-control,
+    alt-svc]
+  exhaustion_status: null
+guidance: >-
+  Treat this as an unmetered marketing-site surface and self-throttle. Use conditional GET with the
+  returned ETag, request only the fields you need with _fields, and keep per_page at or below 100
+  (the server-enforced maximum declared in the route-discovery document).
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - {url: 'https://effectphotonics.com/wp-json/', http_status: 200, rate_limit_headers: none}
+  - {url: 'https://effectphotonics.com/wp-json/wp/v2/posts?per_page=1', http_status: 200, rate_limit_headers: none}
+  - {url: 'https://effectphotonics.com/wp-json/mcp/mcp-oauth-server', http_status: 401, rate_limit_headers: none}

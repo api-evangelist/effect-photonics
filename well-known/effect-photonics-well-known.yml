@@ -1,0 +1,68 @@
+generated: '2026-08-12'
+method: probed
+source: https://effectphotonics.com/.well-known/
+host: https://effectphotonics.com
+summary: >-
+  Two of the probed well-known paths returned real documents: the RFC 8414 OAuth 2.0 Authorization
+  Server metadata and the RFC 9728 OAuth 2.0 Protected Resource metadata, both served by the
+  WordPress MCP adapter that guards this host's Model Context Protocol servers. Everything else 404s.
+  The 404 bodies are the site's HTML 404 page, not documents. The WellKnown pointer in apis.yml is
+  emitted on the strength of the two 200s only.
+documents:
+- path: /.well-known/oauth-authorization-server   # RFC 8414
+  status: 200
+  content_type: application/json
+  file: effect-photonics-oauth-authorization-server.json
+  note: >-
+    Issuer https://effectphotonics.com; authorization_code + refresh_token; PKCE S256 required;
+    single scope `mcp`; token_endpoint_auth_methods_supported = ["none"] (public clients);
+    client_id_metadata_document_supported = true, so clients register by URL rather than by
+    dynamic client registration.
+- path: /.well-known/oauth-protected-resource     # RFC 9728
+  status: 200
+  content_type: application/json
+  file: effect-photonics-oauth-protected-resource.json
+  note: >-
+    Names https://effectphotonics.com/wp-json/mcp/mcp-oauth-server as the protected resource, with
+    https://effectphotonics.com as its authorization server and `mcp` as the only scope. Reached at
+    the trailing-slash form; the bare path 301s to it.
+- path: /.well-known/security.txt                 # RFC 9116
+  status: 404
+- path: /.well-known/openid-configuration          # OIDC discovery
+  status: 404
+- path: /.well-known/api-catalog                   # RFC 9727
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/agent-card.json               # A2A 1.0.0
+  status: 404
+- path: /.well-known/agent.json                    # A2A pre-0.3 legacy
+  status: 404
+other_root_documents:
+- path: /robots.txt
+  status: 200
+  file: effect-photonics-robots.txt
+  note: >-
+    A Yoast-generated block that allows every user-agent (`Disallow:` empty) and names
+    https://effectphotonics.com/sitemap_index.xml. It expresses no AI-training, content-signal or
+    agent-specific directive, so no ContentSignal pointer is emitted — the file is kept as evidence
+    of that absence, not as a signal.
+- path: /llms.txt
+  status: 404
+- path: /sitemap_index.xml
+  status: 200
+  note: 27 child sitemaps, including product, career, event, partner, team and the seven optical
+    hardware taxonomies.
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - {url: 'https://effectphotonics.com/.well-known/oauth-authorization-server', http_status: 200}
+  - {url: 'https://effectphotonics.com/.well-known/oauth-protected-resource', http_status: 200}
+  - {url: 'https://effectphotonics.com/.well-known/security.txt', http_status: 404}
+  - {url: 'https://effectphotonics.com/.well-known/openid-configuration', http_status: 404}
+  - {url: 'https://effectphotonics.com/.well-known/api-catalog', http_status: 404}
+  - {url: 'https://effectphotonics.com/.well-known/ai-plugin.json', http_status: 404}
+  - {url: 'https://effectphotonics.com/.well-known/agent-card.json', http_status: 404}
+  - {url: 'https://effectphotonics.com/.well-known/agent.json', http_status: 404}
+  - {url: 'https://effectphotonics.com/llms.txt', http_status: 404}
+  - {url: 'https://effectphotonics.com/robots.txt', http_status: 200}

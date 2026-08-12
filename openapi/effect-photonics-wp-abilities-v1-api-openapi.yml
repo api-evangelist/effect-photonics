@@ -1,0 +1,476 @@
+openapi: 3.2.0
+info:
+  title: EFFECT Photonics WordPress REST Wp Abilities/v1 API
+  version: wp/v2
+  summary: The live WordPress REST API served by the EFFECT Photonics corporate website.
+  description: 'Derived verbatim from the route-discovery document the EFFECT Photonics web server publishes at https://effectphotonics.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter
+    name, type, default and enum in this document was read from that live response; nothing was invented.
+
+
+    This is the content-management API of the corporate marketing site, not a product, network-management or optical-transceiver API. EFFECT Photonics is an optical-semiconductor company (coherent optical
+    transceivers and monolithically integrated InP photonic circuits) and publishes no developer product API, no developer portal and no SDK. The surface is catalogued because it is a real, live, self-describing
+    HTTP contract on the provider''s own host, because it carries a first-party custom namespace (`effect/v1`), and because the same install exposes two Model Context Protocol servers under the `mcp` namespace
+    guarded by an OAuth 2.1 authorization server (see mcp/effect-photonics-mcp.yml).
+
+
+    Only the WordPress core and first-party namespaces are represented (`wp/v2`, `wp-abilities/v1`, `mcp`, `oembed/1.0`, `effect/v1`, and the root index). Third-party plugin namespaces advertised by the
+    same discovery document (akismet/v1, litespeed/v1, litespeed/v3, yoast/v1, connector/v1, duplicate-post/v1, wp-site-health/v1, wp-block-editor/v1) are intentionally excluded as vendor plugin internals.'
+  x-derived-from: https://effectphotonics.com/wp-json/
+  x-derived-on: '2026-08-12'
+  x-apievangelist-method: derived
+servers:
+- url: https://effectphotonics.com
+  description: Production
+tags:
+- name: wp-abilities/v1
+  description: WordPress Abilities API — the registry of named abilities an agent may discover and run, and the surface the MCP adapter projects into tools. Read access is capability-gated (observed HTTP
+    401 anonymously).
+paths:
+  /wp-json/wp-abilities/v1:
+    get:
+      operationId: getWpAbilitiesV1
+      summary: GET /wp-abilities/v1
+      description: WordPress REST API route `/wp-abilities/v1` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: namespace
+        in: query
+        schema:
+          default: wp-abilities/v1
+      - name: context
+        in: query
+        schema:
+          default: view
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+  /wp-json/wp-abilities/v1/categories:
+    get:
+      operationId: getWpAbilitiesV1Categories
+      summary: GET /wp-abilities/v1/categories
+      description: WordPress REST API route `/wp-abilities/v1/categories` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: context
+        in: query
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          - edit
+          default: view
+        description: Scope under which the request is made; determines fields present in response.
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+        description: Current page of the collection.
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+          default: 50
+          minimum: 1
+          maximum: 100
+        description: Maximum number of items to be returned in result set.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+  /wp-json/wp-abilities/v1/categories/{slug}:
+    get:
+      operationId: getWpAbilitiesV1CategoriesSlug
+      summary: GET /wp-abilities/v1/categories/{slug}
+      description: WordPress REST API route `/wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+  /wp-json/wp-abilities/v1/abilities/{name}/run:
+    get:
+      operationId: getWpAbilitiesV1AbilitiesNameRun
+      summary: GET /wp-abilities/v1/abilities/{name}/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: input
+        in: query
+        schema:
+          type: integer
+          default: null
+        description: Input parameters for the ability execution.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+    post:
+      operationId: postWpAbilitiesV1AbilitiesNameRun
+      summary: POST /wp-abilities/v1/abilities/{name}/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: integer
+                  default: null
+                  description: Input parameters for the ability execution.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+    put:
+      operationId: putWpAbilitiesV1AbilitiesNameRun
+      summary: PUT /wp-abilities/v1/abilities/{name}/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: integer
+                  default: null
+                  description: Input parameters for the ability execution.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+    patch:
+      operationId: patchWpAbilitiesV1AbilitiesNameRun
+      summary: PATCH /wp-abilities/v1/abilities/{name}/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: integer
+                  default: null
+                  description: Input parameters for the ability execution.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+    delete:
+      operationId: deleteWpAbilitiesV1AbilitiesNameRun
+      summary: DELETE /wp-abilities/v1/abilities/{name}/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: input
+        in: query
+        schema:
+          type: integer
+          default: null
+        description: Input parameters for the ability execution.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+  /wp-json/wp-abilities/v1/abilities:
+    get:
+      operationId: getWpAbilitiesV1Abilities
+      summary: GET /wp-abilities/v1/abilities
+      description: WordPress REST API route `/wp-abilities/v1/abilities` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: context
+        in: query
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          - edit
+          default: view
+        description: Scope under which the request is made; determines fields present in response.
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+        description: Current page of the collection.
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+          default: 50
+          minimum: 1
+          maximum: 100
+        description: Maximum number of items to be returned in result set.
+      - name: category
+        in: query
+        schema:
+          type: string
+        description: Limit results to abilities in specific ability category.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+  /wp-json/wp-abilities/v1/abilities/{name}:
+    get:
+      operationId: getWpAbilitiesV1AbilitiesName
+      summary: GET /wp-abilities/v1/abilities/{name}
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+)` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+components:
+  schemas:
+    WPError:
+      type: object
+      description: The WordPress REST API error envelope, observed verbatim on live 401/404 responses from this host. Not RFC 9457 problem+json.
+      properties:
+        code:
+          type: string
+          examples:
+          - rest_forbidden
+          - mcp_unauthorized
+          - effect_invalid_attachment
+        message:
+          type: string
+          examples:
+          - Sorry, you are not allowed to do that.
+          - MCP authentication required.
+          - Not an attachment.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              examples:
+              - 401
+              - 404
+  securitySchemes:
+    mcpOAuth2:
+      type: oauth2
+      description: OAuth 2.1 authorization-code + PKCE (S256), as advertised by the provider's RFC 8414 metadata at https://effectphotonics.com/.well-known/oauth-authorization-server (fetched 2026-08-12,
+        HTTP 200). Guards the `mcp` namespace; the protected-resource metadata (RFC 9728) names https://effectphotonics.com/wp-json/mcp/mcp-oauth-server.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://effectphotonics.com/oauth/authorize
+          tokenUrl: https://effectphotonics.com/oauth/token
+          refreshUrl: https://effectphotonics.com/oauth/token
+          scopes:
+            mcp: Access the site's Model Context Protocol server.
+    wpNonce:
+      type: apiKey
+      in: header
+      name: X-WP-Nonce
+      description: WordPress cookie-authentication nonce. Advertised by the live server in its Access-Control-Allow-Headers response header (Authorization, X-WP-Nonce, Content-Disposition, Content-MD5,
+        Content-Type).
+    applicationPassword:
+      type: http
+      scheme: basic
+      description: WordPress Application Passwords — HTTP Basic with a user-issued application password. The live discovery document at https://effectphotonics.com/wp-json/ names https://effectphotonics.com/wp-admin/authorize-application.php
+        as the authorization endpoint.

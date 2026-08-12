@@ -1,0 +1,98 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the EFFECT Photonics WordPress REST API
+  version: 1.0.0
+extends: openapi/_original/effect-photonics-wp-rest-openapi.yml
+x-generated: '2026-08-12'
+x-method: generated
+x-source: >-
+  API Evangelist enrichment pass 2026-08-12. Captures our annotations on top of the derived spec so
+  the derived document itself stays a faithful projection of the provider's live route-discovery
+  output.
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: '2026-08-12'
+    x-apievangelist-surface-class: corporate-cms
+    x-apievangelist-provider-type: optical-semiconductor-manufacturer
+    x-apievangelist-note: >-
+      EFFECT Photonics publishes no developer product API. This contract is the WordPress REST API of
+      its corporate marketing site, derived from the live /wp-json/ discovery document. It is
+      catalogued because it is a real, self-describing, provider-hosted HTTP surface that carries a
+      publicly readable optical-product catalogue, a first-party `effect/v1` namespace, and two
+      Model Context Protocol servers.
+    x-apievangelist-artifacts:
+      conventions: conventions/effect-photonics-conventions.yml
+      errors: errors/effect-photonics-problem-types.yml
+      authentication: authentication/effect-photonics-authentication.yml
+      scopes: scopes/effect-photonics-scopes.yml
+      mcp: mcp/effect-photonics-mcp.yml
+      crosswalk: mcp/effect-photonics-tool-crosswalk.yml
+      data_model: data-model/effect-photonics-data-model.yml
+      lifecycle: lifecycle/effect-photonics-lifecycle.yml
+      conformance: conformance/effect-photonics-conformance.yml
+      well_known: well-known/effect-photonics-well-known.yml
+      skills: skills/_index.yml
+- target: $.info
+  update:
+    contact:
+      name: EFFECT Photonics
+      url: https://effectphotonics.com/get-in-touch/
+    termsOfService: https://effectphotonics.com/terms-conditions/
+    license:
+      name: Proprietary — see Terms & Conditions
+      url: https://effectphotonics.com/terms-conditions/
+- target: $
+  update:
+    x-agent-access-posture:
+      robots_txt: https://effectphotonics.com/robots.txt
+      directive: 'User-agent: * / Disallow: (empty) — everything allowed'
+      ai_directives: none
+      note: >-
+        The site names no AI crawler, expresses no training or content signal, and reserves no rights
+        in robots.txt. Absence of a restriction is not a grant; agents should still respect the
+        Terms & Conditions linked above.
+- target: $.paths['/wp-json/wp/v2/product'].get
+  update:
+    x-apievangelist-use-case: >-
+      The substantive public dataset on this API — the coherent optical laser assembly catalogue.
+      Each product carries term-id references into seven hardware taxonomies (product_line,
+      output_power, form_factor, tuning_range, target_application, temperature,
+      management_interface). Resolve a taxonomy slug to its term id first, then filter products by
+      that id; narrow the payload with _fields and inline terms with _embed.
+- target: $.paths['/wp-json/wp/v2/faq'].get
+  update:
+    x-apievangelist-use-case: >-
+      The only structured publication of this company's commercial and compliance terms — lead times
+      (12–16 weeks for standard ITLA configurations), MOQ policy, incoterms (EXW default from the
+      Netherlands), dual-use export control, RoHS/REACH declarations and IEC 60825-1 Class 1 laser
+      safety. Category ids come from /wp-json/wp/v2/faq-category.
+- target: $.paths['/wp-json/wp/v2/posts'].get
+  update:
+    x-apievangelist-use-case: >-
+      The newsroom — press releases and technical insight articles (144 posts observed on
+      2026-08-12). Paginate with page/per_page and read X-WP-Total / X-WP-TotalPages.
+- target: $.paths['/wp-json/effect/v1/glb-positions/{id}'].get
+  update:
+    x-apievangelist-note: >-
+      First-party endpoint storing 3D-model placement for GLB media attachments used by the product
+      visualiser. Anonymously reachable; a non-attachment id returns the site's own error code
+      `effect_invalid_attachment` with HTTP 404.
+- target: $.paths['/wp-json/effect/v1/careers/sync'].post
+  update:
+    x-apievangelist-note: >-
+      First-party job-board synchronisation trigger. Capability-gated — observed HTTP 401
+      `rest_forbidden` anonymously. Populates the `career` collection.
+- target: $.paths['/wp-json/mcp/mcp-oauth-server'].post
+  update:
+    x-apievangelist-note: >-
+      Live MCP JSON-RPC endpoint. Anonymous tools/list and initialize both return HTTP 401 with a
+      correct RFC 9728 Bearer challenge; the tool set requires the `mcp` scope via
+      authorization_code + PKCE (S256), with public-client registration by client_id metadata
+      document.
+- target: $.paths['/wp-json/wp-abilities/v1/abilities'].get
+  update:
+    x-apievangelist-note: >-
+      WordPress Abilities registry — the surface MCP tools are projected from. Gated (HTTP 401
+      anonymously), so the ability names and input schemas behind the MCP servers are not publicly
+      discoverable.

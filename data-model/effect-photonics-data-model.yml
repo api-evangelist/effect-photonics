@@ -1,0 +1,178 @@
+generated: '2026-08-12'
+method: derived
+source: >-
+  openapi/_original/effect-photonics-wp-rest-openapi.yml, the live type registry at
+  https://effectphotonics.com/wp-json/wp/v2/types, and the live taxonomy collections, all read on
+  2026-08-12
+summary: >-
+  The entity graph of the EFFECT Photonics WordPress install. Beyond WordPress core, the site models
+  six first-party content types — product, career, event, partner, team and faq — and hangs seven
+  optical-hardware taxonomies off `product`. That product/taxonomy cluster is the substantive part of
+  this API: it is a machine-readable catalogue of coherent-optical laser assemblies keyed by output
+  power, form factor, tuning range, operating temperature grade, target application and hardware
+  management interface. Entity names, rest_bases and taxonomy bindings were read from the live type
+  registry; term values were read from the live taxonomy collections. Counts are as observed on
+  2026-08-12 and will drift.
+id_scheme:
+  style: integer
+  note: >-
+    Every entity is addressed by a WordPress integer post/term id, with a URL-safe `slug` as the
+    stable human key. There are no typed id prefixes.
+entities:
+- name: product
+  rest_base: product
+  path: /wp-json/wp/v2/product
+  public_read: true
+  count_observed: 2
+  description: >-
+    A coherent optical laser assembly product page — pITLA14 (14 dBm pico ITLA for 100G coherent
+    transceivers) and nITLA17 (17 dBm nano ITLA for 400/800G coherent transceivers) as observed.
+  relationships:
+  - {type: has_many, target: product_line, via: product_line}
+  - {type: has_many, target: output_power, via: output_power}
+  - {type: has_many, target: form_factor, via: form_factor}
+  - {type: has_many, target: tuning_range, via: tuning_range}
+  - {type: has_many, target: target_application, via: target_application}
+  - {type: has_many, target: temperature, via: temperature}
+  - {type: has_many, target: management_interface, via: management_interface}
+  - {type: has_one, target: media, via: featured_media}
+- name: career
+  rest_base: career
+  path: /wp-json/wp/v2/career
+  public_read: true
+  count_observed: 6
+  relationships:
+  - {type: has_many, target: career_department, via: career_department}
+  - {type: has_many, target: career_location, via: career_location}
+  - {type: has_many, target: career_employment_type, via: career_employment_type}
+  - {type: has_many, target: career_workspace_type, via: career_workspace_type}
+  note: >-
+    Populated by the first-party POST /wp-json/effect/v1/careers/sync trigger, which is
+    capability-gated (HTTP 401 anonymously).
+- name: event
+  rest_base: event
+  path: /wp-json/wp/v2/event
+  public_read: true
+  count_observed: 2
+  relationships:
+  - {type: has_many, target: event_type, via: event_type}
+  - {type: has_many, target: event_region, via: event_region}
+- name: partner
+  rest_base: partner
+  path: /wp-json/wp/v2/partner
+  public_read: true
+  count_observed: 1
+  relationships:
+  - {type: has_many, target: partner-category, via: partner-category}
+- name: team
+  rest_base: team
+  path: /wp-json/wp/v2/team
+  public_read: true
+  count_observed: 7
+  relationships:
+  - {type: has_many, target: function, via: function}
+  - {type: has_many, target: location, via: location}
+- name: faq
+  rest_base: faq
+  path: /wp-json/wp/v2/faq
+  public_read: true
+  count_observed: 29
+  relationships:
+  - {type: has_many, target: faq-category, via: faq-category}
+  note: >-
+    The only place on the site where commercial and compliance terms are published as structured
+    content — lead times, MOQ, incoterms, export control, RoHS/REACH and laser-safety declarations.
+- name: post
+  rest_base: posts
+  path: /wp-json/wp/v2/posts
+  public_read: true
+  count_observed: 144
+  description: The newsroom — press releases and technical insight articles.
+  relationships:
+  - {type: has_many, target: category, via: categories}
+  - {type: has_many, target: post_tag, via: tags}
+  - {type: belongs_to, target: user, via: author}
+  - {type: has_one, target: media, via: featured_media}
+- name: page
+  rest_base: pages
+  path: /wp-json/wp/v2/pages
+  public_read: true
+  count_observed: 20
+  relationships:
+  - {type: belongs_to, target: page, via: parent}
+- name: media
+  rest_base: media
+  path: /wp-json/wp/v2/media
+  public_read: true
+  relationships:
+  - {type: belongs_to, target: post, via: post}
+  note: >-
+    Also the resource behind the first-party GET/POST /wp-json/effect/v1/glb-positions/{id}
+    endpoint, which stores 3D-model placement for GLB attachments used by the product visualiser;
+    a non-attachment id returns the custom error `effect_invalid_attachment`.
+taxonomies:
+- name: product_line
+  attached_to: [product]
+  terms_observed: [nITLA17, pico ITLA class, pITLA14]
+- name: output_power
+  attached_to: [product]
+  terms_observed: [14 dBm, 17 dBm]
+- name: form_factor
+  attached_to: [product]
+  terms_observed: [nano ITLA, pico, pico ITLA]
+- name: tuning_range
+  attached_to: [product]
+  terms_observed: [C-band]
+- name: target_application
+  attached_to: [product]
+  terms_observed: [100G ZR, 400G ZR / 400G ZR+ / 800G ZR]
+- name: temperature
+  attached_to: [product]
+  terms_observed: [I-temp]
+- name: management_interface
+  attached_to: [product]
+  terms_observed: [OIF ITLA MSA 01.3]
+  note: >-
+    The hardware control interface the assemblies implement — an Optical Internetworking Forum
+    Integrable Tunable Laser Assembly MSA revision. This is a device-level management standard, not
+    a web API; it is the closest thing EFFECT Photonics publishes to a machine interface contract
+    for its actual products, and it is not exposed over HTTP.
+- name: career_department
+  attached_to: [career]
+- name: career_location
+  attached_to: [career]
+- name: career_employment_type
+  attached_to: [career]
+- name: career_workspace_type
+  attached_to: [career]
+- name: event_type
+  attached_to: [event]
+- name: event_region
+  attached_to: [event]
+- name: partner-category
+  attached_to: [partner]
+- name: function
+  attached_to: [team]
+- name: location
+  attached_to: [team]
+- name: faq-category
+  attached_to: [faq]
+  terms_observed: [Compliance & Certifications, Custom Configurations, Export & Shipping Restrictions,
+    Lead Times & Availability, Sampling & Evaluation, Technical Support]
+- name: category
+  attached_to: [post]
+- name: post_tag
+  attached_to: [post]
+query_pattern:
+  note: >-
+    Taxonomy filtering uses term ids, not slugs — resolve the slug first, then filter. For example
+    GET /wp-json/wp/v2/management_interface?slug=oif-itla-msa-01-3 returns term id 1380, then
+    GET /wp-json/wp/v2/product?management_interface=1380 returns the matching products.
+render: null
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - {url: 'https://effectphotonics.com/wp-json/wp/v2/types', http_status: 200}
+  - {url: 'https://effectphotonics.com/wp-json/wp/v2/product?per_page=2', http_status: 200}
+  - {url: 'https://effectphotonics.com/wp-json/wp/v2/management_interface', http_status: 200}
+  - {url: 'https://effectphotonics.com/wp-json/wp/v2/faq?per_page=30', http_status: 200}

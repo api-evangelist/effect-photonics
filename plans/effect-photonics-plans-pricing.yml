@@ -1,0 +1,32 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  https://effectphotonics.com/ (page sitemap enumerated 2026-08-12), https://effectphotonics.com/products/,
+  https://effectphotonics.com/faq/ and the FAQ collection at https://effectphotonics.com/wp-json/wp/v2/faq
+plan_count: 0
+plans: []
+note: >-
+  EFFECT Photonics publishes no plans, no tiers and no prices — for an API or for anything else. It
+  sells optical hardware through a quoted, account-managed sales motion. The 20-page site sitemap
+  contains no pricing page, and the company's own FAQ says evaluation units are "supplied against a
+  purchase order at agreed evaluation pricing", that minimum order quantities "depend on the scope of
+  the customization", and that availability and price come from an account manager. There is no API
+  product to price: the WordPress REST API catalogued in this repository is the corporate website's
+  own surface, offered under no commercial terms at all. plan_count is 0 because nothing is
+  published, not because nothing was looked for.
+commercial_model:
+  motion: quote-and-purchase-order
+  self_serve: false
+  api_metering: none
+  contact: https://effectphotonics.com/get-in-touch/sales/
+  published_terms:
+  - {topic: lead time, statement: 'Typically 12 to 16 weeks for standard ITLA configurations.', source: 'https://effectphotonics.com/faq/'}
+  - {topic: incoterms, statement: 'Default EXW from the Netherlands facility; FCA, DAP or DDP where commercially agreed.', source: 'https://effectphotonics.com/faq/'}
+  - {topic: evaluation, statement: 'Evaluation units against a purchase order at agreed evaluation pricing; four to eight week typical evaluation period.', source: 'https://effectphotonics.com/faq/'}
+  - {topic: volume, statement: 'Blanket purchase orders and multi-quarter supply agreements with agreed pricing and capacity reservation.', source: 'https://effectphotonics.com/faq/'}
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - {url: 'https://effectphotonics.com/page-sitemap.xml', http_status: 200, finding: 'no pricing or plans page among the 20 published pages'}
+  - {url: 'https://effectphotonics.com/wp-json/wp/v2/faq?per_page=30', http_status: 200, finding: 'commercial terms described qualitatively; no prices'}
+  - {url: 'https://effectphotonics.com/products/', http_status: 200, finding: 'no prices'}

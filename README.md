@@ -1,4 +1,4 @@
-# Effect Photonics
+# EFFECT Photonics
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -42,5 +42,11 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Effect Photonics is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+EFFECT Photonics is an optical-semiconductor company headquartered at High Tech Campus 37 in Eindhoven, the Netherlands, with sites in the United Kingdom, the United States and Taiwan. Spun out of Eindhoven University of Technology, it designs and manufactures coherent optical transceiver subsystems and monolithically integrated Indium Phosphide (InP) photonic integrated circuits, including its pico and nano Integrable Tunable Laser Assemblies for 100G, 400G and 800G coherent links.
+
+**EFFECT Photonics operates no developer API programme.** It publishes no product, network-management or transceiver-control API, no developer portal, no documentation, no OpenAPI, no SDK, no CLI, no sandbox and no pricing. This profile exists because the company's corporate website runs a live, self-describing WordPress REST API — 290 routes across 13 namespaces at `https://effectphotonics.com/wp-json/` — which includes a publicly readable optical-product catalogue keyed by seven hardware taxonomies (product line, output power, form factor, tuning range, target application, operating temperature grade and management interface), a first-party `effect/v1` namespace, and two Model Context Protocol servers guarded by an OAuth 2.1 authorization server the host advertises through RFC 8414 and RFC 9728 metadata. Both MCP servers returned HTTP 401 to an anonymous `tools/list` on 2026-08-12, so no tool list is recorded.
+
+Every specification under `openapi/` is an API Evangelist derivation of that live route-discovery document, marked `x-apievangelist-method: derived`. It is not a provider-published contract.
+
+- https://effectphotonics.com/
+- https://effectphotonics.com/wp-json/
