@@ -1,0 +1,1438 @@
+{
+  "item": [
+    {
+      "id": "7d17922c-ea1a-49c9-a0aa-94534772c2ab",
+      "name": "mcp",
+      "description": {
+        "content": "Model Context Protocol servers exposed by the WordPress MCP adapter. Both servers require authentication (observed HTTP 401 anonymously); the OAuth server answers with an RFC 9728 Bearer challenge.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c48a3dce-b934-4541-9ea6-378755bfb27f",
+          "name": "GET /mcp",
+          "request": {
+            "name": "GET /mcp",
+            "description": {
+              "content": "WordPress REST API route `/mcp` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "mcp"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "namespace",
+                  "value": "mcp"
+                },
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "mcp"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://effectphotonics.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "11edc3ae-4729-4d90-bcdb-f8fad29a31c5",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "namespace",
+                      "value": "mcp"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "079342e0-cd48-45a8-a0f6-c3a7b28a90ab",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "namespace",
+                      "value": "mcp"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2db93cf4-60d5-48c2-9a92-46f6f5438ee4",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "namespace",
+                      "value": "mcp"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8766d80-c7b4-468c-8c83-a683ab76a615",
+          "name": "POST /mcp/mcp-oauth-server",
+          "request": {
+            "name": "POST /mcp/mcp-oauth-server",
+            "description": {
+              "content": "WordPress REST API route `/mcp/mcp-oauth-server` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "mcp",
+                "mcp-oauth-server"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "mcp"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://effectphotonics.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ac155684-0b1c-4cf1-b8da-1fa9686cb9ea",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-oauth-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "503790df-f492-47bb-85ec-85dde274f40a",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-oauth-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "75f125aa-8c62-444c-a94b-50065f20fb5f",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-oauth-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49a9dc46-fc34-46a8-a9d7-c6e64f4e2bb8",
+          "name": "GET /mcp/mcp-oauth-server",
+          "request": {
+            "name": "GET /mcp/mcp-oauth-server",
+            "description": {
+              "content": "WordPress REST API route `/mcp/mcp-oauth-server` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "mcp",
+                "mcp-oauth-server"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "mcp"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://effectphotonics.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d28265cd-fca8-4015-931a-1dcdb5be4bc5",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-oauth-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2340d7f7-c960-4013-971d-4ffb64ec72ee",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-oauth-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "745c6a45-cb80-46b0-9ffd-1cd569cdbb78",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-oauth-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5be9bd47-3b16-4c63-9965-cc631448feb5",
+          "name": "DELETE /mcp/mcp-oauth-server",
+          "request": {
+            "name": "DELETE /mcp/mcp-oauth-server",
+            "description": {
+              "content": "WordPress REST API route `/mcp/mcp-oauth-server` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "mcp",
+                "mcp-oauth-server"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "mcp"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://effectphotonics.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d3bd2d4e-df65-4af9-9012-d0f75967e793",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-oauth-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f34ad92c-9f62-4a74-ae6a-f6cd62b47f9f",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-oauth-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1bdbf5a5-47be-48ae-ace8-141c8614004d",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-oauth-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4f44c69e-1a02-4009-b4f0-51da2251cb92",
+          "name": "POST /mcp/mcp-adapter-default-server",
+          "request": {
+            "name": "POST /mcp/mcp-adapter-default-server",
+            "description": {
+              "content": "WordPress REST API route `/mcp/mcp-adapter-default-server` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "mcp",
+                "mcp-adapter-default-server"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "mcp"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://effectphotonics.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "79a78d55-dcb8-4d0e-ad6a-34855ee2909b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-adapter-default-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e3e66399-31ed-4cd2-bf2b-0ff122febc14",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-adapter-default-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3a11aa70-2a87-40e3-b096-d7e23a8fe29f",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-adapter-default-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "60698c11-54ba-42be-a645-b09460b1b457",
+          "name": "GET /mcp/mcp-adapter-default-server",
+          "request": {
+            "name": "GET /mcp/mcp-adapter-default-server",
+            "description": {
+              "content": "WordPress REST API route `/mcp/mcp-adapter-default-server` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "mcp",
+                "mcp-adapter-default-server"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "mcp"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://effectphotonics.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d1a23479-6dc5-447b-801d-a78fdd971e74",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-adapter-default-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d30c7a10-393f-431d-838d-cbb9259e2291",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-adapter-default-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae4712d0-3423-4ce0-8e25-953dae5c1a46",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-adapter-default-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74f8c0ca-2a68-4231-8319-8d1184ce92c2",
+          "name": "DELETE /mcp/mcp-adapter-default-server",
+          "request": {
+            "name": "DELETE /mcp/mcp-adapter-default-server",
+            "description": {
+              "content": "WordPress REST API route `/mcp/mcp-adapter-default-server` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "mcp",
+                "mcp-adapter-default-server"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "mcp"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://effectphotonics.com/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://effectphotonics.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c0dad4cc-e5a8-4c6f-85ee-2836bec9d125",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-adapter-default-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "882c7ae9-e926-49e1-8506-f285123e7435",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-adapter-default-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a7b05e2d-31bb-4a71-b7d1-6f351d720ffc",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "mcp",
+                    "mcp-adapter-default-server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 513\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://effectphotonics.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ce6b02ee-33dc-4a25-8662-af948f3fc526",
+    "name": "EFFECT Photonics WordPress REST MCP API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Derived verbatim from the route-discovery document the EFFECT Photonics web server publishes at https://effectphotonics.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter name, type, default and enum in this document was read from that live response; nothing was invented.\n\nThis is the content-management API of the corporate marketing site, not a product, network-management or optical-transceiver API. EFFECT Photonics is an optical-semiconductor company (coherent optical transceivers and monolithically integrated InP photonic circuits) and publishes no developer product API, no developer portal and no SDK. The surface is catalogued because it is a real, live, self-describing HTTP contract on the provider's own host, because it carries a first-party custom namespace (`effect/v1`), and because the same install exposes two Model Context Protocol servers under the `mcp` namespace guarded by an OAuth 2.1 authorization server (see mcp/effect-photonics-mcp.yml).\n\nOnly the WordPress core and first-party namespaces are represented (`wp/v2`, `wp-abilities/v1`, `mcp`, `oembed/1.0`, `effect/v1`, and the root index). Third-party plugin namespaces advertised by the same discovery document (akismet/v1, litespeed/v1, litespeed/v3, yoast/v1, connector/v1, duplicate-post/v1, wp-site-health/v1, wp-block-editor/v1) are intentionally excluded as vendor plugin internals.",
+      "type": "text/plain"
+    }
+  }
+}

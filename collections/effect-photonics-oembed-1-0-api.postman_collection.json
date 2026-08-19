@@ -1,0 +1,672 @@
+{
+  "item": [
+    {
+      "id": "983ea68c-a67f-49b5-85bf-946fd2df4f1f",
+      "name": "oembed/1.0",
+      "description": {
+        "content": "oEmbed discovery and proxy endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cd1ff1d7-8c98-445a-a9ec-899a09b6517f",
+          "name": "GET /oembed/1.0",
+          "request": {
+            "name": "GET /oembed/1.0",
+            "description": {
+              "content": "WordPress REST API route `/oembed/1.0` in namespace `oembed/1.0`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "oembed",
+                "1.0"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "namespace",
+                  "value": "oembed/1.0"
+                },
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "afa4ebba-0082-4afd-be31-1bce997590e3",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "oembed",
+                    "1.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "namespace",
+                      "value": "oembed/1.0"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d5079dc3-6d51-47b4-848c-25c08b301a4d",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "oembed",
+                    "1.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "namespace",
+                      "value": "oembed/1.0"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1578\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "830c857b-e154-4224-a031-95b263fd9511",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "oembed",
+                    "1.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "namespace",
+                      "value": "oembed/1.0"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1578\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e65d48d8-ed7d-46a6-a0fb-519819599a92",
+          "name": "GET /oembed/1.0/embed",
+          "request": {
+            "name": "GET /oembed/1.0/embed",
+            "description": {
+              "content": "WordPress REST API route `/oembed/1.0/embed` in namespace `oembed/1.0`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "oembed",
+                "1.0",
+                "embed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<uri>",
+                  "description": "(Required) The URL of the resource for which to fetch oEmbed data."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxwidth",
+                  "value": "600"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "679aeff8-ede3-430e-a711-6e3fb358eec8",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "oembed",
+                    "1.0",
+                    "embed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<uri>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "maxwidth",
+                      "value": "600"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8ba4e021-d2ab-4e45-aa67-ba03612e9ad9",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "oembed",
+                    "1.0",
+                    "embed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<uri>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "maxwidth",
+                      "value": "600"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1578\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b73ad62-81b6-4fcb-bed9-a6ef0bc8174c",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "oembed",
+                    "1.0",
+                    "embed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<uri>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "maxwidth",
+                      "value": "600"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1578\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d80d904d-3b01-4f0c-8be0-1539de86c166",
+          "name": "GET /oembed/1.0/proxy",
+          "request": {
+            "name": "GET /oembed/1.0/proxy",
+            "description": {
+              "content": "WordPress REST API route `/oembed/1.0/proxy` in namespace `oembed/1.0`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "oembed",
+                "1.0",
+                "proxy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<uri>",
+                  "description": "(Required) The URL of the resource for which to fetch oEmbed data."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "The oEmbed format to use."
+                },
+                {
+                  "disabled": false,
+                  "key": "maxwidth",
+                  "value": "600",
+                  "description": "The maximum width of the embed frame in pixels."
+                },
+                {
+                  "disabled": false,
+                  "key": "maxheight",
+                  "value": "<integer>",
+                  "description": "The maximum height of the embed frame in pixels."
+                },
+                {
+                  "disabled": false,
+                  "key": "discover",
+                  "value": "true",
+                  "description": "Whether to perform an oEmbed discovery request for unsanctioned providers."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bc1a3f46-0e7b-419f-a0ba-9df3a9f7ada4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "oembed",
+                    "1.0",
+                    "proxy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<uri>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "maxwidth",
+                      "value": "600"
+                    },
+                    {
+                      "key": "maxheight",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "discover",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3bfa24a9-74c0-4739-a0b5-4dfe26a70b9c",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "oembed",
+                    "1.0",
+                    "proxy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<uri>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "maxwidth",
+                      "value": "600"
+                    },
+                    {
+                      "key": "maxheight",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "discover",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1578\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ee1860e-c752-46be-af30-dfde7e374a9f",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "oembed",
+                    "1.0",
+                    "proxy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<uri>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "maxwidth",
+                      "value": "600"
+                    },
+                    {
+                      "key": "maxheight",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "discover",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1578\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://effectphotonics.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fc56997c-e4da-45d1-b9ea-62430ce59240",
+    "name": "EFFECT Photonics WordPress REST Oembed/1.0 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Derived verbatim from the route-discovery document the EFFECT Photonics web server publishes at https://effectphotonics.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter name, type, default and enum in this document was read from that live response; nothing was invented.\n\nThis is the content-management API of the corporate marketing site, not a product, network-management or optical-transceiver API. EFFECT Photonics is an optical-semiconductor company (coherent optical transceivers and monolithically integrated InP photonic circuits) and publishes no developer product API, no developer portal and no SDK. The surface is catalogued because it is a real, live, self-describing HTTP contract on the provider's own host, because it carries a first-party custom namespace (`effect/v1`), and because the same install exposes two Model Context Protocol servers under the `mcp` namespace guarded by an OAuth 2.1 authorization server (see mcp/effect-photonics-mcp.yml).\n\nOnly the WordPress core and first-party namespaces are represented (`wp/v2`, `wp-abilities/v1`, `mcp`, `oembed/1.0`, `effect/v1`, and the root index). Third-party plugin namespaces advertised by the same discovery document (akismet/v1, litespeed/v1, litespeed/v3, yoast/v1, connector/v1, duplicate-post/v1, wp-site-health/v1, wp-block-editor/v1) are intentionally excluded as vendor plugin internals.",
+      "type": "text/plain"
+    }
+  }
+}

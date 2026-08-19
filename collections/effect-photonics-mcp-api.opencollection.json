@@ -1,0 +1,177 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EFFECT Photonics WordPress REST MCP API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "mcp",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /mcp",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://effectphotonics.com/wp-json/mcp",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://effectphotonics.com/oauth/authorize",
+              "accessTokenUrl": "https://effectphotonics.com/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "WordPress REST API route `/mcp` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "GET /mcp/mcp-oauth-server",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://effectphotonics.com/wp-json/mcp/mcp-oauth-server",
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://effectphotonics.com/oauth/authorize",
+              "accessTokenUrl": "https://effectphotonics.com/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "WordPress REST API route `/mcp/mcp-oauth-server` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "POST /mcp/mcp-oauth-server",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://effectphotonics.com/wp-json/mcp/mcp-oauth-server",
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://effectphotonics.com/oauth/authorize",
+              "accessTokenUrl": "https://effectphotonics.com/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "WordPress REST API route `/mcp/mcp-oauth-server` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "DELETE /mcp/mcp-oauth-server",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://effectphotonics.com/wp-json/mcp/mcp-oauth-server",
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://effectphotonics.com/oauth/authorize",
+              "accessTokenUrl": "https://effectphotonics.com/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "WordPress REST API route `/mcp/mcp-oauth-server` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "GET /mcp/mcp-adapter-default-server",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://effectphotonics.com/wp-json/mcp/mcp-adapter-default-server",
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://effectphotonics.com/oauth/authorize",
+              "accessTokenUrl": "https://effectphotonics.com/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "WordPress REST API route `/mcp/mcp-adapter-default-server` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "POST /mcp/mcp-adapter-default-server",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://effectphotonics.com/wp-json/mcp/mcp-adapter-default-server",
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://effectphotonics.com/oauth/authorize",
+              "accessTokenUrl": "https://effectphotonics.com/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "WordPress REST API route `/mcp/mcp-adapter-default-server` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "DELETE /mcp/mcp-adapter-default-server",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://effectphotonics.com/wp-json/mcp/mcp-adapter-default-server",
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://effectphotonics.com/oauth/authorize",
+              "accessTokenUrl": "https://effectphotonics.com/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "WordPress REST API route `/mcp/mcp-adapter-default-server` in namespace `mcp`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

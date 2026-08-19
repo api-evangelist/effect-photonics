@@ -1,0 +1,750 @@
+{
+  "item": [
+    {
+      "id": "878a7591-adb7-4601-bdfb-d8508eaddb08",
+      "name": "effect/v1",
+      "description": {
+        "content": "EFFECT Photonics' own custom REST namespace — a careers synchronisation trigger and a GLB (3D model) position endpoint used by the product visualiser.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "885e0b7d-ad29-4db0-9df3-e098730e0bad",
+          "name": "GET /effect/v1",
+          "request": {
+            "name": "GET /effect/v1",
+            "description": {
+              "content": "WordPress REST API route `/effect/v1` in namespace `effect/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "effect",
+                "v1"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "namespace",
+                  "value": "effect/v1"
+                },
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "12725a65-c6fe-48c8-8177-c81caccc79b4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "effect",
+                    "v1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "namespace",
+                      "value": "effect/v1"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ffa6c2a9-8662-4419-bcce-5323202c448d",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "effect",
+                    "v1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "namespace",
+                      "value": "effect/v1"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2337\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4767cf31-8364-427f-8bb9-e5ed18f2b031",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "effect",
+                    "v1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "namespace",
+                      "value": "effect/v1"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2337\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e19b19b-6eb5-42b0-9fe7-164dfe6e13c6",
+          "name": "POST /effect/v1/careers/sync",
+          "request": {
+            "name": "POST /effect/v1/careers/sync",
+            "description": {
+              "content": "WordPress REST API route `/effect/v1/careers/sync` in namespace `effect/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "effect",
+                "v1",
+                "careers",
+                "sync"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27ed2813-c039-41cc-b55e-67b002861eb9",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "effect",
+                    "v1",
+                    "careers",
+                    "sync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b858885-2e96-4eac-9837-7ea1e3bf07b8",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "effect",
+                    "v1",
+                    "careers",
+                    "sync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2337\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "db1e528a-1520-4b22-a0c5-89b2adde07e6",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "effect",
+                    "v1",
+                    "careers",
+                    "sync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2337\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "66118d46-d14f-403f-bd08-8bb464e59991",
+          "name": "GET /effect/v1/glb-positions/{id}",
+          "request": {
+            "name": "GET /effect/v1/glb-positions/{id}",
+            "description": {
+              "content": "WordPress REST API route `/effect/v1/glb-positions/(?P<id>\\d+)` in namespace `effect/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "effect",
+                "v1",
+                "glb-positions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6fefedaf-8453-4658-b0a6-eb3b3a164a6b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "effect",
+                    "v1",
+                    "glb-positions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1702d491-d213-4d28-b3bc-a750dff9e320",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "effect",
+                    "v1",
+                    "glb-positions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2337\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fe286ca6-a2a2-4cfc-a565-324cabe94ce7",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "effect",
+                    "v1",
+                    "glb-positions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2337\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19839d91-c036-43e1-8c5b-de3730032e81",
+          "name": "POST /effect/v1/glb-positions/{id}",
+          "request": {
+            "name": "POST /effect/v1/glb-positions/{id}",
+            "description": {
+              "content": "WordPress REST API route `/effect/v1/glb-positions/(?P<id>\\d+)` in namespace `effect/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp-json",
+                "effect",
+                "v1",
+                "glb-positions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e856fc1-f236-4803-bc86-2d9c1d4b6654",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "effect",
+                    "v1",
+                    "glb-positions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0880be57-64de-4af8-b3e8-5e34934e54e2",
+              "name": "Authentication required or capability missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "effect",
+                    "v1",
+                    "glb-positions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2337\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8d04563c-0923-4182-a5db-521df9561e7f",
+              "name": "No route or resource found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp-json",
+                    "effect",
+                    "v1",
+                    "glb-positions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2337\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://effectphotonics.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "96701f87-c06a-41f2-893b-4c76cf421e3c",
+    "name": "EFFECT Photonics WordPress REST Effect/v1 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Derived verbatim from the route-discovery document the EFFECT Photonics web server publishes at https://effectphotonics.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter name, type, default and enum in this document was read from that live response; nothing was invented.\n\nThis is the content-management API of the corporate marketing site, not a product, network-management or optical-transceiver API. EFFECT Photonics is an optical-semiconductor company (coherent optical transceivers and monolithically integrated InP photonic circuits) and publishes no developer product API, no developer portal and no SDK. The surface is catalogued because it is a real, live, self-describing HTTP contract on the provider's own host, because it carries a first-party custom namespace (`effect/v1`), and because the same install exposes two Model Context Protocol servers under the `mcp` namespace guarded by an OAuth 2.1 authorization server (see mcp/effect-photonics-mcp.yml).\n\nOnly the WordPress core and first-party namespaces are represented (`wp/v2`, `wp-abilities/v1`, `mcp`, `oembed/1.0`, `effect/v1`, and the root index). Third-party plugin namespaces advertised by the same discovery document (akismet/v1, litespeed/v1, litespeed/v3, yoast/v1, connector/v1, duplicate-post/v1, wp-site-health/v1, wp-block-editor/v1) are intentionally excluded as vendor plugin internals.",
+      "type": "text/plain"
+    }
+  }
+}

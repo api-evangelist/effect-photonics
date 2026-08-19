@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EFFECT Photonics WordPress REST Effect/v1 API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "effect/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /effect/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://effectphotonics.com/wp-json/effect/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "WordPress REST API route `/effect/v1` in namespace `effect/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "POST /effect/v1/careers/sync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://effectphotonics.com/wp-json/effect/v1/careers/sync"
+          },
+          "docs": "WordPress REST API route `/effect/v1/careers/sync` in namespace `effect/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "GET /effect/v1/glb-positions/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://effectphotonics.com/wp-json/effect/v1/glb-positions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "WordPress REST API route `/effect/v1/glb-positions/(?P<id>\\d+)` in namespace `effect/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "POST /effect/v1/glb-positions/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://effectphotonics.com/wp-json/effect/v1/glb-positions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "WordPress REST API route `/effect/v1/glb-positions/(?P<id>\\d+)` in namespace `effect/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
