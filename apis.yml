@@ -34,6 +34,19 @@ tags:
 - Telecommunications
 - Data Center Interconnect
 - Hardware
+- MCP
+- WordPress
+- Netherlands
+tags_raw:
+- Company
+- Photonics
+- Optical Networking
+- Optical Transceivers
+- Photonic Integrated Circuits
+- Semiconductors
+- Telecommunications
+- Data Center Interconnect
+- Hardware
 - Model Context Protocol
 - WordPress
 - Netherlands
@@ -82,6 +95,8 @@ apis:
   humanURL: https://effectphotonics.com/wp-json/mcp
   baseURL: https://effectphotonics.com/wp-json/
   tags:
+  - MCP
+  tags_raw:
   - mcp
   properties:
   - type: OpenAPI
@@ -121,6 +136,8 @@ apis:
   humanURL: https://effectphotonics.com/wp-json/
   baseURL: https://effectphotonics.com/wp-json/
   tags:
+  - Root
+  tags_raw:
   - root
   properties:
   - type: OpenAPI
