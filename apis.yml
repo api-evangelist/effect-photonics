@@ -29,6 +29,9 @@ deliveryModel:
   method: derived
 image: https://effectphotonics.com/wp-content/uploads/2026/05/EFFECT-Photonics_logo-color.svg
 url: https://raw.githubusercontent.com/api-evangelist/effect-photonics/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "It operates no developer API programme and publishes no product, network-management or transceiver-control API, no developer portal, no SDK and no pricing."
 x-type: company
 x-source: harvest:secondary-market
 x-tier: enriched
