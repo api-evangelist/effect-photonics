@@ -3,18 +3,13 @@ info:
   title: EFFECT Photonics WordPress REST Wp/v2 API
   version: wp/v2
   summary: The live WordPress REST API served by the EFFECT Photonics corporate website.
-  description: 'Derived verbatim from the route-discovery document the EFFECT Photonics web server publishes at https://effectphotonics.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter
-    name, type, default and enum in this document was read from that live response; nothing was invented.
+  description: 'Derived verbatim from the route-discovery document the EFFECT Photonics web server publishes at https://effectphotonics.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter name, type, default and enum in this document was read from that live response; nothing was invented.
 
 
-    This is the content-management API of the corporate marketing site, not a product, network-management or optical-transceiver API. EFFECT Photonics is an optical-semiconductor company (coherent optical
-    transceivers and monolithically integrated InP photonic circuits) and publishes no developer product API, no developer portal and no SDK. The surface is catalogued because it is a real, live, self-describing
-    HTTP contract on the provider''s own host, because it carries a first-party custom namespace (`effect/v1`), and because the same install exposes two Model Context Protocol servers under the `mcp` namespace
-    guarded by an OAuth 2.1 authorization server (see mcp/effect-photonics-mcp.yml).
+    This is the content-management API of the corporate marketing site, not a product, network-management or optical-transceiver API. EFFECT Photonics is an optical-semiconductor company (coherent optical transceivers and monolithically integrated InP photonic circuits) and publishes no developer product API, no developer portal and no SDK. The surface is catalogued because it is a real, live, self-describing HTTP contract on the provider''s own host, because it carries a first-party custom namespace (`effect/v1`), and because the same install exposes two Model Context Protocol servers under the `mcp` namespace guarded by an OAuth 2.1 authorization server (see mcp/effect-photonics-mcp.yml).
 
 
-    Only the WordPress core and first-party namespaces are represented (`wp/v2`, `wp-abilities/v1`, `mcp`, `oembed/1.0`, `effect/v1`, and the root index). Third-party plugin namespaces advertised by the
-    same discovery document (akismet/v1, litespeed/v1, litespeed/v3, yoast/v1, connector/v1, duplicate-post/v1, wp-site-health/v1, wp-block-editor/v1) are intentionally excluded as vendor plugin internals.'
+    Only the WordPress core and first-party namespaces are represented (`wp/v2`, `wp-abilities/v1`, `mcp`, `oembed/1.0`, `effect/v1`, and the root index). Third-party plugin namespaces advertised by the same discovery document (akismet/v1, litespeed/v1, litespeed/v3, yoast/v1, connector/v1, duplicate-post/v1, wp-site-health/v1, wp-block-editor/v1) are intentionally excluded as vendor plugin internals.'
   x-derived-from: https://effectphotonics.com/wp-json/
   x-derived-on: '2026-08-12'
   x-apievangelist-method: derived
@@ -507,7 +502,7 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: &id001
+                  enum:
                   - publish
                   - future
                   - draft
@@ -535,19 +530,19 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: &id002
+                  enum:
                   - open
                   - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: &id003
+                  enum:
                   - open
                   - closed
                   description: Whether or not the post can be pinged.
                 format:
                   type: string
-                  enum: &id004
+                  enum:
                   - standard
                   - aside
                   - chat
@@ -628,7 +623,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id001
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -650,15 +651,29 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: *id002
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: *id003
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not the post can be pinged.
                 format:
                   type: string
-                  enum: *id004
+                  enum:
+                  - standard
+                  - aside
+                  - chat
+                  - gallery
+                  - link
+                  - image
+                  - quote
+                  - status
+                  - video
+                  - audio
                   description: The format for the post.
                 meta:
                   type: object
@@ -729,7 +744,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id001
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -751,15 +772,29 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: *id002
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: *id003
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not the post can be pinged.
                 format:
                   type: string
-                  enum: *id004
+                  enum:
+                  - standard
+                  - aside
+                  - chat
+                  - gallery
+                  - link
+                  - image
+                  - quote
+                  - status
+                  - video
+                  - audio
                   description: The format for the post.
                 meta:
                   type: object
@@ -1633,7 +1668,7 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: &id005
+                  enum:
                   - publish
                   - future
                   - draft
@@ -1664,13 +1699,13 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: &id006
+                  enum:
                   - open
                   - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: &id007
+                  enum:
                   - open
                   - closed
                   description: Whether or not the post can be pinged.
@@ -1733,7 +1768,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id005
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -1758,11 +1799,15 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: *id006
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: *id007
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not the post can be pinged.
                 menu_order:
                   type: integer
@@ -1823,7 +1868,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id005
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -1848,11 +1899,15 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: *id006
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: *id007
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not the post can be pinged.
                 menu_order:
                   type: integer
@@ -2684,7 +2739,7 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: &id008
+                  enum:
                   - publish
                   - future
                   - draft
@@ -2703,13 +2758,13 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: &id009
+                  enum:
                   - open
                   - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: &id010
+                  enum:
                   - open
                   - closed
                   description: Whether or not the post can be pinged.
@@ -2781,7 +2836,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id008
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 title:
                   type: object
@@ -2794,11 +2855,15 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: *id009
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: *id010
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not the post can be pinged.
                 meta:
                   type: object
@@ -2868,7 +2933,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id008
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 title:
                   type: object
@@ -2881,11 +2952,15 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: *id009
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: *id010
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not the post can be pinged.
                 meta:
                   type: object
@@ -3462,7 +3537,7 @@ paths:
                   description: The title for the object.
                 type:
                   type: string
-                  enum: &id011
+                  enum:
                   - taxonomy
                   - post_type
                   - post_type_archive
@@ -3470,7 +3545,7 @@ paths:
                   description: The family of objects originally represented, such as "post_type" or "taxonomy".
                 status:
                   type: string
-                  enum: &id012
+                  enum:
                   - publish
                   - future
                   - draft
@@ -3506,7 +3581,7 @@ paths:
                   description: The database ID of the original object this menu item represents, for example the ID for posts or the term_id for categories.
                 target:
                   type: string
-                  enum: &id013
+                  enum:
                   - _blank
                   - ''
                   description: The target attribute of the link element for this menu item.
@@ -3567,11 +3642,21 @@ paths:
                   description: The title for the object.
                 type:
                   type: string
-                  enum: *id011
+                  enum:
+                  - taxonomy
+                  - post_type
+                  - post_type_archive
+                  - custom
                   description: The family of objects originally represented, such as "post_type" or "taxonomy".
                 status:
                   type: string
-                  enum: *id012
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the object.
                 parent:
                   type: integer
@@ -3601,7 +3686,9 @@ paths:
                   description: The database ID of the original object this menu item represents, for example the ID for posts or the term_id for categories.
                 target:
                   type: string
-                  enum: *id013
+                  enum:
+                  - _blank
+                  - ''
                   description: The target attribute of the link element for this menu item.
                 url:
                   type: string
@@ -3660,11 +3747,21 @@ paths:
                   description: The title for the object.
                 type:
                   type: string
-                  enum: *id011
+                  enum:
+                  - taxonomy
+                  - post_type
+                  - post_type_archive
+                  - custom
                   description: The family of objects originally represented, such as "post_type" or "taxonomy".
                 status:
                   type: string
-                  enum: *id012
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the object.
                 parent:
                   type: integer
@@ -3694,7 +3791,9 @@ paths:
                   description: The database ID of the original object this menu item represents, for example the ID for posts or the term_id for categories.
                 target:
                   type: string
-                  enum: *id013
+                  enum:
+                  - _blank
+                  - ''
                   description: The target attribute of the link element for this menu item.
                 url:
                   type: string
@@ -4315,7 +4414,7 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: &id014
+                  enum:
                   - publish
                   - future
                   - draft
@@ -4396,7 +4495,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id014
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -4471,7 +4576,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id014
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -4921,8 +5032,7 @@ paths:
     get:
       operationId: getWpV2TemplatesParentRevisions
       summary: GET /wp/v2/templates/{parent}/revisions
-      description: WordPress REST API route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions` in namespace `wp/v2`, as advertised by the live route-discovery document
-        at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5026,8 +5136,7 @@ paths:
     get:
       operationId: getWpV2TemplatesParentRevisionsId
       summary: GET /wp/v2/templates/{parent}/revisions/{id}
-      description: WordPress REST API route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery
-        document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5072,8 +5181,7 @@ paths:
     delete:
       operationId: deleteWpV2TemplatesParentRevisionsId
       summary: DELETE /wp/v2/templates/{parent}/revisions/{id}
-      description: WordPress REST API route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery
-        document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5115,8 +5223,7 @@ paths:
     get:
       operationId: getWpV2TemplatesIdAutosaves
       summary: GET /wp/v2/templates/{id}/autosaves
-      description: WordPress REST API route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document
-        at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5156,8 +5263,7 @@ paths:
     post:
       operationId: postWpV2TemplatesIdAutosaves
       summary: POST /wp/v2/templates/{id}/autosaves
-      description: WordPress REST API route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document
-        at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5226,8 +5332,7 @@ paths:
     get:
       operationId: getWpV2TemplatesParentAutosavesId
       summary: GET /wp/v2/templates/{parent}/autosaves/{id}
-      description: WordPress REST API route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery
-        document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5510,7 +5615,7 @@ paths:
                   description: Description of template.
                 status:
                   type: string
-                  enum: &id015
+                  enum:
                   - publish
                   - future
                   - draft
@@ -5578,7 +5683,13 @@ paths:
                   description: Description of template.
                 status:
                   type: string
-                  enum: *id015
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: Status of template.
                 author:
                   type: integer
@@ -5640,7 +5751,13 @@ paths:
                   description: Description of template.
                 status:
                   type: string
-                  enum: *id015
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: Status of template.
                 author:
                   type: integer
@@ -5703,8 +5820,7 @@ paths:
     get:
       operationId: getWpV2TemplatePartsParentRevisions
       summary: GET /wp/v2/template-parts/{parent}/revisions
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions` in namespace `wp/v2`, as advertised by the live route-discovery
-        document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5808,8 +5924,7 @@ paths:
     get:
       operationId: getWpV2TemplatePartsParentRevisionsId
       summary: GET /wp/v2/template-parts/{parent}/revisions/{id}
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised by the live
-        route-discovery document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5854,8 +5969,7 @@ paths:
     delete:
       operationId: deleteWpV2TemplatePartsParentRevisionsId
       summary: DELETE /wp/v2/template-parts/{parent}/revisions/{id}
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised by the live
-        route-discovery document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5897,8 +6011,7 @@ paths:
     get:
       operationId: getWpV2TemplatePartsIdAutosaves
       summary: GET /wp/v2/template-parts/{id}/autosaves
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document
-        at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5938,8 +6051,7 @@ paths:
     post:
       operationId: postWpV2TemplatePartsIdAutosaves
       summary: POST /wp/v2/template-parts/{id}/autosaves
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document
-        at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6011,8 +6123,7 @@ paths:
     get:
       operationId: getWpV2TemplatePartsParentAutosavesId
       summary: GET /wp/v2/template-parts/{parent}/autosaves/{id}
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised by the live
-        route-discovery document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6222,8 +6333,7 @@ paths:
     get:
       operationId: getWpV2TemplatePartsId
       summary: GET /wp/v2/template-parts/{id}
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at
-        https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6263,8 +6373,7 @@ paths:
     post:
       operationId: postWpV2TemplatePartsId
       summary: POST /wp/v2/template-parts/{id}
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at
-        https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6300,7 +6409,7 @@ paths:
                   description: Description of template.
                 status:
                   type: string
-                  enum: &id016
+                  enum:
                   - publish
                   - future
                   - draft
@@ -6335,8 +6444,7 @@ paths:
     put:
       operationId: putWpV2TemplatePartsId
       summary: PUT /wp/v2/template-parts/{id}
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at
-        https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6372,7 +6480,13 @@ paths:
                   description: Description of template.
                 status:
                   type: string
-                  enum: *id016
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: Status of template.
                 author:
                   type: integer
@@ -6401,8 +6515,7 @@ paths:
     patch:
       operationId: patchWpV2TemplatePartsId
       summary: PATCH /wp/v2/template-parts/{id}
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at
-        https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6438,7 +6551,13 @@ paths:
                   description: Description of template.
                 status:
                   type: string
-                  enum: *id016
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: Status of template.
                 author:
                   type: integer
@@ -6467,8 +6586,7 @@ paths:
     delete:
       operationId: deleteWpV2TemplatePartsId
       summary: DELETE /wp/v2/template-parts/{id}
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at
-        https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6611,8 +6729,7 @@ paths:
     get:
       operationId: getWpV2GlobalStylesThemesStylesheetVariations
       summary: GET /wp/v2/global-styles/themes/{stylesheet}/variations
-      description: WordPress REST API route `/wp/v2/global-styles/themes/(?P<stylesheet>[\/\s%\w\.\(\)\[\]\@_\-]+)/variations` in namespace `wp/v2`, as advertised by the live route-discovery document at
-        https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/global-styles/themes/(?P<stylesheet>[\/\s%\w\.\(\)\[\]\@_\-]+)/variations` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6643,8 +6760,7 @@ paths:
     get:
       operationId: getWpV2GlobalStylesThemesStylesheet
       summary: GET /wp/v2/global-styles/themes/{stylesheet}
-      description: WordPress REST API route `/wp/v2/global-styles/themes/(?P<stylesheet>[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)` in namespace `wp/v2`, as advertised by the live route-discovery document
-        at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/global-styles/themes/(?P<stylesheet>[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -7159,7 +7275,7 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: &id017
+                  enum:
                   - publish
                   - future
                   - draft
@@ -7229,7 +7345,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id017
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -7293,7 +7415,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id017
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -8719,7 +8847,7 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: &id018
+                  enum:
                   - publish
                   - future
                   - draft
@@ -8747,13 +8875,13 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: &id019
+                  enum:
                   - open
                   - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: &id020
+                  enum:
                   - open
                   - closed
                   description: Whether or not the post can be pinged.
@@ -8818,7 +8946,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id018
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -8840,11 +8974,15 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: *id019
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: *id020
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not the post can be pinged.
                 meta:
                   type: object
@@ -8907,7 +9045,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id018
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -8929,11 +9073,15 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: *id019
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: *id020
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not the post can be pinged.
                 meta:
                   type: object
@@ -9727,7 +9875,7 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: &id021
+                  enum:
                   - publish
                   - future
                   - draft
@@ -9805,7 +9953,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id021
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -9877,7 +10031,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id021
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -10680,7 +10840,7 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: &id022
+                  enum:
                   - publish
                   - future
                   - draft
@@ -10766,7 +10926,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id022
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -10846,7 +11012,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id022
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -11501,7 +11673,7 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: &id023
+                  enum:
                   - publish
                   - future
                   - draft
@@ -11594,7 +11766,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id023
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -11681,7 +11859,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id023
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -12511,7 +12695,7 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: &id024
+                  enum:
                   - publish
                   - future
                   - draft
@@ -12594,7 +12778,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id024
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -12671,7 +12861,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id024
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -13559,7 +13755,7 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: &id025
+                  enum:
                   - publish
                   - future
                   - draft
@@ -13670,7 +13866,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id025
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -13775,7 +13977,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id025
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -22912,7 +23120,7 @@ paths:
                   description: Description of the user.
                 locale:
                   type: string
-                  enum: &id026
+                  enum:
                   - ''
                   - en_US
                   description: Locale for the user.
@@ -22989,7 +23197,9 @@ paths:
                   description: Description of the user.
                 locale:
                   type: string
-                  enum: *id026
+                  enum:
+                  - ''
+                  - en_US
                   description: Locale for the user.
                 nickname:
                   type: string
@@ -23064,7 +23274,9 @@ paths:
                   description: Description of the user.
                 locale:
                   type: string
-                  enum: *id026
+                  enum:
+                  - ''
+                  - en_US
                   description: Locale for the user.
                 nickname:
                   type: string
@@ -24236,7 +24448,7 @@ paths:
         in: query
         schema:
           type: string
-          enum: &id027
+          enum:
           - edit
           default: view
         description: Scope under which the request is made; determines fields present in response.
@@ -24244,7 +24456,7 @@ paths:
         in: query
         schema:
           type: object
-          default: &id028 []
+          default: []
         description: Attributes for the block.
       - name: post_id
         in: query
@@ -24290,12 +24502,13 @@ paths:
               properties:
                 context:
                   type: string
-                  enum: *id027
+                  enum:
+                  - edit
                   default: view
                   description: Scope under which the request is made; determines fields present in response.
                 attributes:
                   type: object
-                  default: *id028
+                  default: []
                   description: Attributes for the block.
                 post_id:
                   type: integer
@@ -24539,13 +24752,13 @@ paths:
                   description: The ID of the page that should display the latest posts
                 default_ping_status:
                   type: string
-                  enum: &id029
+                  enum:
                   - open
                   - closed
                   description: Allow link notifications from other blogs (pingbacks and trackbacks) on new articles.
                 default_comment_status:
                   type: string
-                  enum: &id030
+                  enum:
                   - open
                   - closed
                   description: Allow people to submit comments on new posts.
@@ -24641,11 +24854,15 @@ paths:
                   description: The ID of the page that should display the latest posts
                 default_ping_status:
                   type: string
-                  enum: *id029
+                  enum:
+                  - open
+                  - closed
                   description: Allow link notifications from other blogs (pingbacks and trackbacks) on new articles.
                 default_comment_status:
                   type: string
-                  enum: *id030
+                  enum:
+                  - open
+                  - closed
                   description: Allow people to submit comments on new posts.
                 site_logo:
                   type: integer
@@ -24739,11 +24956,15 @@ paths:
                   description: The ID of the page that should display the latest posts
                 default_ping_status:
                   type: string
-                  enum: *id029
+                  enum:
+                  - open
+                  - closed
                   description: Allow link notifications from other blogs (pingbacks and trackbacks) on new articles.
                 default_comment_status:
                   type: string
-                  enum: *id030
+                  enum:
+                  - open
+                  - closed
                   description: Allow people to submit comments on new posts.
                 site_logo:
                   type: integer
@@ -24992,7 +25213,7 @@ paths:
               properties:
                 context:
                   type: string
-                  enum: &id031
+                  enum:
                   - view
                   - embed
                   - edit
@@ -25000,7 +25221,7 @@ paths:
                   description: Scope under which the request is made; determines fields present in response.
                 status:
                   type: string
-                  enum: &id032
+                  enum:
                   - inactive
                   - active
                   description: The plugin activation status.
@@ -25043,12 +25264,17 @@ paths:
               properties:
                 context:
                   type: string
-                  enum: *id031
+                  enum:
+                  - view
+                  - embed
+                  - edit
                   default: view
                   description: Scope under which the request is made; determines fields present in response.
                 status:
                   type: string
-                  enum: *id032
+                  enum:
+                  - inactive
+                  - active
                   description: The plugin activation status.
       responses:
         '200':
@@ -25089,12 +25315,17 @@ paths:
               properties:
                 context:
                   type: string
-                  enum: *id031
+                  enum:
+                  - view
+                  - embed
+                  - edit
                   default: view
                   description: Scope under which the request is made; determines fields present in response.
                 status:
                   type: string
-                  enum: *id032
+                  enum:
+                  - inactive
+                  - active
                   description: The plugin activation status.
       responses:
         '200':
@@ -25253,7 +25484,7 @@ paths:
                 widgets:
                   type: array
                   items:
-                    type: &id033
+                    type:
                     - object
                     - string
                   description: Nested widgets.
@@ -25297,7 +25528,9 @@ paths:
                 widgets:
                   type: array
                   items:
-                    type: *id033
+                    type:
+                    - object
+                    - string
                   description: Nested widgets.
       responses:
         '200':
@@ -25339,7 +25572,9 @@ paths:
                 widgets:
                   type: array
                   items:
-                    type: *id033
+                    type:
+                    - object
+                    - string
                   description: Nested widgets.
       responses:
         '200':
@@ -26339,8 +26574,7 @@ components:
   securitySchemes:
     mcpOAuth2:
       type: oauth2
-      description: OAuth 2.1 authorization-code + PKCE (S256), as advertised by the provider's RFC 8414 metadata at https://effectphotonics.com/.well-known/oauth-authorization-server (fetched 2026-08-12,
-        HTTP 200). Guards the `mcp` namespace; the protected-resource metadata (RFC 9728) names https://effectphotonics.com/wp-json/mcp/mcp-oauth-server.
+      description: OAuth 2.1 authorization-code + PKCE (S256), as advertised by the provider's RFC 8414 metadata at https://effectphotonics.com/.well-known/oauth-authorization-server (fetched 2026-08-12, HTTP 200). Guards the `mcp` namespace; the protected-resource metadata (RFC 9728) names https://effectphotonics.com/wp-json/mcp/mcp-oauth-server.
       flows:
         authorizationCode:
           authorizationUrl: https://effectphotonics.com/oauth/authorize
@@ -26352,10 +26586,8 @@ components:
       type: apiKey
       in: header
       name: X-WP-Nonce
-      description: WordPress cookie-authentication nonce. Advertised by the live server in its Access-Control-Allow-Headers response header (Authorization, X-WP-Nonce, Content-Disposition, Content-MD5,
-        Content-Type).
+      description: WordPress cookie-authentication nonce. Advertised by the live server in its Access-Control-Allow-Headers response header (Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type).
     applicationPassword:
       type: http
       scheme: basic
-      description: WordPress Application Passwords — HTTP Basic with a user-issued application password. The live discovery document at https://effectphotonics.com/wp-json/ names https://effectphotonics.com/wp-admin/authorize-application.php
-        as the authorization endpoint.
+      description: WordPress Application Passwords — HTTP Basic with a user-issued application password. The live discovery document at https://effectphotonics.com/wp-json/ names https://effectphotonics.com/wp-admin/authorize-application.php as the authorization endpoint.

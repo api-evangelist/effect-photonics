@@ -1,0 +1,26 @@
+{
+  "provider": "effect-photonics",
+  "sources": [
+    "effect-photonics-effect-v1-api-openapi.yml",
+    "effect-photonics-mcp-api-openapi.yml",
+    "effect-photonics-oembed-1-0-api-openapi.yml",
+    "effect-photonics-root-api-openapi.yml",
+    "effect-photonics-wp-abilities-v1-api-openapi.yml",
+    "effect-photonics-wp-v2-api-openapi.yml"
+  ],
+  "outputs": [
+    "effect-photonics-effect-v1-api-openapi.yml",
+    "effect-photonics-mcp-api-openapi.yml",
+    "effect-photonics-oembed-1-0-api-openapi.yml",
+    "effect-photonics-root-api-openapi.yml",
+    "effect-photonics-wp-abilities-v1-api-openapi.yml",
+    "effect-photonics-wp-v2-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "apis.yml register: already-registered"
+  ],
+  "skipped": []
+}

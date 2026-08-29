@@ -3,18 +3,13 @@ info:
   title: EFFECT Photonics WordPress REST MCP API
   version: wp/v2
   summary: The live WordPress REST API served by the EFFECT Photonics corporate website.
-  description: 'Derived verbatim from the route-discovery document the EFFECT Photonics web server publishes at https://effectphotonics.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter
-    name, type, default and enum in this document was read from that live response; nothing was invented.
+  description: 'Derived verbatim from the route-discovery document the EFFECT Photonics web server publishes at https://effectphotonics.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter name, type, default and enum in this document was read from that live response; nothing was invented.
 
 
-    This is the content-management API of the corporate marketing site, not a product, network-management or optical-transceiver API. EFFECT Photonics is an optical-semiconductor company (coherent optical
-    transceivers and monolithically integrated InP photonic circuits) and publishes no developer product API, no developer portal and no SDK. The surface is catalogued because it is a real, live, self-describing
-    HTTP contract on the provider''s own host, because it carries a first-party custom namespace (`effect/v1`), and because the same install exposes two Model Context Protocol servers under the `mcp` namespace
-    guarded by an OAuth 2.1 authorization server (see mcp/effect-photonics-mcp.yml).
+    This is the content-management API of the corporate marketing site, not a product, network-management or optical-transceiver API. EFFECT Photonics is an optical-semiconductor company (coherent optical transceivers and monolithically integrated InP photonic circuits) and publishes no developer product API, no developer portal and no SDK. The surface is catalogued because it is a real, live, self-describing HTTP contract on the provider''s own host, because it carries a first-party custom namespace (`effect/v1`), and because the same install exposes two Model Context Protocol servers under the `mcp` namespace guarded by an OAuth 2.1 authorization server (see mcp/effect-photonics-mcp.yml).
 
 
-    Only the WordPress core and first-party namespaces are represented (`wp/v2`, `wp-abilities/v1`, `mcp`, `oembed/1.0`, `effect/v1`, and the root index). Third-party plugin namespaces advertised by the
-    same discovery document (akismet/v1, litespeed/v1, litespeed/v3, yoast/v1, connector/v1, duplicate-post/v1, wp-site-health/v1, wp-block-editor/v1) are intentionally excluded as vendor plugin internals.'
+    Only the WordPress core and first-party namespaces are represented (`wp/v2`, `wp-abilities/v1`, `mcp`, `oembed/1.0`, `effect/v1`, and the root index). Third-party plugin namespaces advertised by the same discovery document (akismet/v1, litespeed/v1, litespeed/v3, yoast/v1, connector/v1, duplicate-post/v1, wp-site-health/v1, wp-block-editor/v1) are intentionally excluded as vendor plugin internals.'
   x-derived-from: https://effectphotonics.com/wp-json/
   x-derived-on: '2026-08-12'
   x-apievangelist-method: derived
@@ -23,8 +18,7 @@ servers:
   description: Production
 tags:
 - name: mcp
-  description: Model Context Protocol servers exposed by the WordPress MCP adapter. Both servers require authentication (observed HTTP 401 anonymously); the OAuth server answers with an RFC 9728 Bearer
-    challenge.
+  description: Model Context Protocol servers exposed by the WordPress MCP adapter. Both servers require authentication (observed HTTP 401 anonymously); the OAuth server answers with an RFC 9728 Bearer challenge.
 paths:
   /wp-json/mcp:
     get:
@@ -256,8 +250,7 @@ components:
   securitySchemes:
     mcpOAuth2:
       type: oauth2
-      description: OAuth 2.1 authorization-code + PKCE (S256), as advertised by the provider's RFC 8414 metadata at https://effectphotonics.com/.well-known/oauth-authorization-server (fetched 2026-08-12,
-        HTTP 200). Guards the `mcp` namespace; the protected-resource metadata (RFC 9728) names https://effectphotonics.com/wp-json/mcp/mcp-oauth-server.
+      description: OAuth 2.1 authorization-code + PKCE (S256), as advertised by the provider's RFC 8414 metadata at https://effectphotonics.com/.well-known/oauth-authorization-server (fetched 2026-08-12, HTTP 200). Guards the `mcp` namespace; the protected-resource metadata (RFC 9728) names https://effectphotonics.com/wp-json/mcp/mcp-oauth-server.
       flows:
         authorizationCode:
           authorizationUrl: https://effectphotonics.com/oauth/authorize
@@ -269,10 +262,8 @@ components:
       type: apiKey
       in: header
       name: X-WP-Nonce
-      description: WordPress cookie-authentication nonce. Advertised by the live server in its Access-Control-Allow-Headers response header (Authorization, X-WP-Nonce, Content-Disposition, Content-MD5,
-        Content-Type).
+      description: WordPress cookie-authentication nonce. Advertised by the live server in its Access-Control-Allow-Headers response header (Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type).
     applicationPassword:
       type: http
       scheme: basic
-      description: WordPress Application Passwords — HTTP Basic with a user-issued application password. The live discovery document at https://effectphotonics.com/wp-json/ names https://effectphotonics.com/wp-admin/authorize-application.php
-        as the authorization endpoint.
+      description: WordPress Application Passwords — HTTP Basic with a user-issued application password. The live discovery document at https://effectphotonics.com/wp-json/ names https://effectphotonics.com/wp-admin/authorize-application.php as the authorization endpoint.
