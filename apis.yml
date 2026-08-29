@@ -15,6 +15,18 @@ description: >-
   first-party `effect/v1` namespace — and because that same install exposes two Model Context Protocol
   servers guarded by an OAuth 2.1 authorization server the host advertises through RFC 8414 and
   RFC 9728 metadata.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://effectphotonics.com/wp-content/uploads/2026/05/EFFECT-Photonics_logo-color.svg
 url: https://raw.githubusercontent.com/api-evangelist/effect-photonics/refs/heads/main/apis.yml
 x-type: company
