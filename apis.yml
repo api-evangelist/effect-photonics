@@ -215,8 +215,6 @@ common:
   url: https://effectphotonics.com/newsroom/iso-9001-certification-reaffirms-effect-photonics-commitment-to-quality-across-operations/
 - type: SecondaryMarket
   url: https://www.nasdaqprivatemarket.com/
-- type: OpenAPI
-  url: openapi/_original/effect-photonics-wp-rest-openapi.yml
 - type: Overlay
   url: overlays/effect-photonics-wp-rest-overlay.yaml
 - type: MCPServer
