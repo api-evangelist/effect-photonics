@@ -3,13 +3,7 @@ info:
   title: EFFECT Photonics WordPress REST Wp Abilities/v1 API
   version: wp/v2
   summary: The live WordPress REST API served by the EFFECT Photonics corporate website.
-  description: 'Derived verbatim from the route-discovery document the EFFECT Photonics web server publishes at https://effectphotonics.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter name, type, default and enum in this document was read from that live response; nothing was invented.
-
-
-    This is the content-management API of the corporate marketing site, not a product, network-management or optical-transceiver API. EFFECT Photonics is an optical-semiconductor company (coherent optical transceivers and monolithically integrated InP photonic circuits) and publishes no developer product API, no developer portal and no SDK. The surface is catalogued because it is a real, live, self-describing HTTP contract on the provider''s own host, because it carries a first-party custom namespace (`effect/v1`), and because the same install exposes two Model Context Protocol servers under the `mcp` namespace guarded by an OAuth 2.1 authorization server (see mcp/effect-photonics-mcp.yml).
-
-
-    Only the WordPress core and first-party namespaces are represented (`wp/v2`, `wp-abilities/v1`, `mcp`, `oembed/1.0`, `effect/v1`, and the root index). Third-party plugin namespaces advertised by the same discovery document (akismet/v1, litespeed/v1, litespeed/v3, yoast/v1, connector/v1, duplicate-post/v1, wp-site-health/v1, wp-block-editor/v1) are intentionally excluded as vendor plugin internals.'
+  description: Derived verbatim from the route-discovery document the EFFECT Photonics web server publishes at https://effectphotonics.com/wp-json/ (fetched 2026-08-12, HTTP 200).
   x-derived-from: https://effectphotonics.com/wp-json/
   x-derived-on: '2026-08-12'
   x-apievangelist-method: derived
@@ -109,7 +103,7 @@ paths:
     get:
       operationId: getWpAbilitiesV1CategoriesSlug
       summary: GET /wp-abilities/v1/categories/{slug}
-      description: WordPress REST API route `/wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp-abilities/v1/categories/(?P[a-z0-9]+(?:-[a-z0-9]+)*)` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp-abilities/v1
       parameters:
@@ -140,7 +134,7 @@ paths:
     get:
       operationId: getWpAbilitiesV1AbilitiesNameRun
       summary: GET /wp-abilities/v1/abilities/{name}/run
-      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp-abilities/v1
       parameters:
@@ -176,7 +170,7 @@ paths:
     post:
       operationId: postWpAbilitiesV1AbilitiesNameRun
       summary: POST /wp-abilities/v1/abilities/{name}/run
-      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp-abilities/v1
       parameters:
@@ -217,7 +211,7 @@ paths:
     put:
       operationId: putWpAbilitiesV1AbilitiesNameRun
       summary: PUT /wp-abilities/v1/abilities/{name}/run
-      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp-abilities/v1
       parameters:
@@ -258,7 +252,7 @@ paths:
     patch:
       operationId: patchWpAbilitiesV1AbilitiesNameRun
       summary: PATCH /wp-abilities/v1/abilities/{name}/run
-      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp-abilities/v1
       parameters:
@@ -299,7 +293,7 @@ paths:
     delete:
       operationId: deleteWpAbilitiesV1AbilitiesNameRun
       summary: DELETE /wp-abilities/v1/abilities/{name}/run
-      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp-abilities/v1
       parameters:
@@ -392,7 +386,7 @@ paths:
     get:
       operationId: getWpAbilitiesV1AbilitiesName
       summary: GET /wp-abilities/v1/abilities/{name}
-      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+)` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+)` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://effectphotonics.com/wp-json/.
       tags:
       - wp-abilities/v1
       parameters:

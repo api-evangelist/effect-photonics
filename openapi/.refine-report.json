@@ -1,12 +1,7 @@
 {
   "provider": "effect-photonics",
   "sources": [
-    "effect-photonics-effect-v1-api-openapi.yml",
-    "effect-photonics-mcp-api-openapi.yml",
-    "effect-photonics-oembed-1-0-api-openapi.yml",
-    "effect-photonics-root-api-openapi.yml",
-    "effect-photonics-wp-abilities-v1-api-openapi.yml",
-    "effect-photonics-wp-v2-api-openapi.yml"
+    "_ae-authored/effect-photonics-wp-rest-openapi.yml"
   ],
   "outputs": [
     "effect-photonics-effect-v1-api-openapi.yml",
@@ -20,7 +15,16 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "effect-photonics-wp-rest-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "effect-photonics-effect-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "effect-photonics-mcp-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "effect-photonics-oembed-1-0-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "effect-photonics-root-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "effect-photonics-wp-abilities-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "effect-photonics-wp-v2-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
