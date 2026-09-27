@@ -80,41 +80,20 @@ tags_raw:
 - WordPress
 - Netherlands
 apis:
-- aid: effect-photonics:effect-photonics-wp-v2-api
-  name: EFFECT Photonics Wp/v2 API
-  description: >-
-    WordPress core content API (posts, pages, media, taxonomies, users, settings) plus the site's
-    custom post types — products, careers, events, partners, team members and FAQs — and the optical
-    hardware taxonomies attached to products. Published content reads anonymously (HTTP 200 observed);
-    writes and privileged reads are capability-gated.
-  humanURL: https://effectphotonics.com/wp-json/
-  baseURL: https://effectphotonics.com/wp-json/
+- aid: effect-photonics:effectphotonics-com-website-wordpress-rest
+  name: EFFECT Photonics Website (WordPress REST)
+  description: 'The public WordPress REST API (wp-json) of the EFFECT Photonics website at effectphotonics.com:
+    the route index of the site''s content management system, catalogued as one site surface rather than
+    as separate APIs.'
+  baseURL: https://effectphotonics.com/wp-json
   tags:
-  - wp/v2
+  - WordPress
+  x-surface: platform-generated
   properties:
-  - type: OpenAPI
-    url: openapi/effect-photonics-wp-v2-api-openapi.yml
-  - type: ToolCrosswalk
-    url: mcp/effect-photonics-tool-crosswalk.yml
-  - type: DataModel
-    url: data-model/effect-photonics-data-model.yml
-- aid: effect-photonics:effect-photonics-effect-v1-api
-  name: EFFECT Photonics Effect/v1 API
-  description: >-
-    EFFECT Photonics' own custom REST namespace — a careers synchronisation trigger
-    (POST /effect/v1/careers/sync, observed HTTP 401 anonymously) and a GLB 3D-model position
-    endpoint used by the product visualiser (GET/POST /effect/v1/glb-positions/{id}).
-  humanURL: https://effectphotonics.com/wp-json/effect/v1
-  baseURL: https://effectphotonics.com/wp-json/
-  tags:
-  - effect/v1
-  properties:
-  - type: OpenAPI
-    url: openapi/effect-photonics-effect-v1-api-openapi.yml
-  - type: ToolCrosswalk
-    url: mcp/effect-photonics-tool-crosswalk.yml
-  - type: DataModel
-    url: data-model/effect-photonics-data-model.yml
+  - type: Documentation
+    url: https://effectphotonics.com/wp-json
+  x-platform: wordpress
+  x-platform-surface: rest
 - aid: effect-photonics:effect-photonics-mcp-api
   name: EFFECT Photonics MCP API
   description: >-
@@ -134,43 +113,9 @@ apis:
     url: mcp/effect-photonics-mcp.yml
   - type: ToolCrosswalk
     url: mcp/effect-photonics-tool-crosswalk.yml
-- aid: effect-photonics:effect-photonics-wp-abilities-v1-api
-  name: EFFECT Photonics Wp Abilities/v1 API
-  description: >-
-    WordPress Abilities API — the registry of named abilities an agent may discover and run, and the
-    surface the MCP adapter projects into tools. Read access is capability-gated (observed HTTP 401
-    anonymously).
-  humanURL: https://effectphotonics.com/wp-json/wp-abilities/v1
-  baseURL: https://effectphotonics.com/wp-json/
-  tags:
-  - wp-abilities/v1
-  properties:
-  - type: OpenAPI
-    url: openapi/effect-photonics-wp-abilities-v1-api-openapi.yml
-  - type: ToolCrosswalk
-    url: mcp/effect-photonics-tool-crosswalk.yml
-- aid: effect-photonics:effect-photonics-oembed-1-0-api
-  name: EFFECT Photonics Oembed/1.0 API
-  description: oEmbed discovery and proxy endpoints.
-  humanURL: https://effectphotonics.com/wp-json/oembed/1.0
-  baseURL: https://effectphotonics.com/wp-json/
-  tags:
-  - oembed/1.0
-  properties:
-  - type: OpenAPI
-    url: openapi/effect-photonics-oembed-1-0-api-openapi.yml
-- aid: effect-photonics:effect-photonics-root-api
-  name: EFFECT Photonics Root API
-  description: REST API index / namespace discovery, plus the WordPress batch/v1 request batching endpoint.
-  humanURL: https://effectphotonics.com/wp-json/
-  baseURL: https://effectphotonics.com/wp-json/
-  tags:
-  - Root
-  tags_raw:
-  - root
-  properties:
-  - type: OpenAPI
-    url: openapi/effect-photonics-root-api-openapi.yml
+  x-surface: platform-generated
+  x-platform: wordpress
+  x-platform-surface: rest
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
