@@ -64,11 +64,134 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-EFFECT Photonics is an optical-semiconductor company headquartered at High Tech Campus 37 in Eindhoven, the Netherlands, with sites in the United Kingdom, the United States and Taiwan. Spun out of Eindhoven University of Technology, it designs and manufactures coherent optical transceiver subsystems and monolithically integrated Indium Phosphide (InP) photonic integrated circuits, including its pico and nano Integrable Tunable Laser Assemblies for 100G, 400G and 800G coherent links.
+EFFECT Photonics is an optical-semiconductor company headquartered at High Tech Campus 37 in Eindhoven, the Netherlands, with sites in the United Kingdom, the United States and Taiwan. Spun out of Eindhoven University of Technology, it designs and manufactures coherent optical transceiver subsystems and monolithically integrated Indium Phosphide (InP) photonic integrated circuits, including its pico and nano Integrable Tunable Laser Assemblies for 100G, 400G and 800G coherent links across telecom access and metro networks, data-center interconnect and AI scale-across infrastructure. It operates no developer API programme and publishes no product, network-management or transceiver-control API, no developer portal, no SDK and no pricing. It is catalogued here because its corporate website runs a live WordPress REST API with 290 discoverable routes — including a publicly readable optical-product catalogue with hardware taxonomies (product line, form factor, output power, tuning range, operating temperature, target application, management interface) and a first-party `effect/v1` namespace — and because that same install exposes two Model Context Protocol servers guarded by an OAuth 2.1 authorization server the host advertises through RFC 8414 and RFC 9728 metadata.
 
-**EFFECT Photonics operates no developer API programme.** It publishes no product, network-management or transceiver-control API, no developer portal, no documentation, no OpenAPI, no SDK, no CLI, no sandbox and no pricing. This profile exists because the company's corporate website runs a live, self-describing WordPress REST API — 290 routes across 13 namespaces at `https://effectphotonics.com/wp-json/` — which includes a publicly readable optical-product catalogue keyed by seven hardware taxonomies (product line, output power, form factor, tuning range, target application, operating temperature grade and management interface), a first-party `effect/v1` namespace, and two Model Context Protocol servers guarded by an OAuth 2.1 authorization server the host advertises through RFC 8414 and RFC 9728 metadata. Both MCP servers returned HTTP 401 to an anonymous `tools/list` on 2026-08-12, so no tool list is recorded.
+**Areas:** Company · Photonics · Optical Networking · Optical Transceivers · Photonic Integrated Circuits · Semiconductors · Telecommunications · Data Center Interconnect · Hardware · MCP · WordPress · Netherlands
 
-Every specification under `openapi/` is an API Evangelist derivation of that live route-discovery document, marked `x-apievangelist-method: derived`. It is not a provider-published contract.
+## EFFECT Photonics on APIs.io
 
-- https://effectphotonics.com/
-- https://effectphotonics.com/wp-json/
+Everything profiled for EFFECT Photonics is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/effect-photonics/](https://apis.io/providers/effect-photonics/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [EFFECT Photonics Website (WordPress REST)](https://apis.io/apis/effect-photonics/effectphotonics-com-website-wordpress-rest/) — The public WordPress REST API (wp-json) of the EFFECT Photonics website at effectphotonics.com: the route index of the site's content management system,…
+- [EFFECT Photonics MCP API](https://apis.io/apis/effect-photonics/effect-photonics-mcp-api/) — Model Context Protocol servers exposed by the WordPress MCP adapter. Both servers require authentication (observed HTTP 401 anonymously); the OAuth server…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [effect-photonics-mcp.yml](https://apis.io/servers/effect-photonics/effect-photonics-mcp-yml/)
+
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [Moved to /providers/effect-photonics/](https://apis.io/collections/effect-photonics/open-effect-photonics-effect-v1-api/)
+- [EFFECT Photonics WordPress REST MCP API](https://apis.io/collections/effect-photonics/open-effect-photonics-mcp-api/)
+- [Moved to /providers/effect-photonics/](https://apis.io/collections/effect-photonics/open-effect-photonics-oembed-1-0-api/)
+- [Moved to /providers/effect-photonics/](https://apis.io/collections/effect-photonics/open-effect-photonics-root-api/)
+- [Moved to /providers/effect-photonics/](https://apis.io/collections/effect-photonics/open-effect-photonics-wp-abilities-v1-api/)
+- [API Collection](https://apis.io/collections/effect-photonics/open-effect-photonics-wp-rest-discovery-original/)
+- [Moved to /providers/effect-photonics/](https://apis.io/collections/effect-photonics/open-effect-photonics-wp-v2-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Effect Photonics Wp Rest Overlay](https://apis.io/overlays/effect-photonics/effect-photonics-wp-rest-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Effect Photonics Authentication](https://apis.io/security/effect-photonics/effect-photonics-authentication/)
+- [Effect Photonics Domain Security](https://apis.io/security/effect-photonics/effect-photonics-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Effect Photonics Scopes](https://apis.io/scopes/effect-photonics/effect-photonics-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Effect Photonics Plans Pricing](https://apis.io/plans/effect-photonics/effect-photonics-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Effect Photonics Rate Limits](https://apis.io/rate-limits/effect-photonics/effect-photonics-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://effectphotonics.com/)
+- [Support](https://effectphotonics.com/get-in-touch/support/)
+- [Blog](https://effectphotonics.com/newsroom/)
+- [Compliance](https://effectphotonics.com/newsroom/iso-9001-certification-reaffirms-effect-photonics-commitment-to-quality-across-operations/)
+- [Terms of service](https://effectphotonics.com/terms-conditions/)
+- [Privacy policy](https://effectphotonics.com/privacy-policy/)
+
+## API Evangelist rating
+
+**Kin Score 24.9** — emerging · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 61.7 |
+| Contract quality | 17.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 30.4 |
+| Access clarity | 28.9 |
+
+**Agent readiness 40.0** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 39.2** — Telecommunications
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/effect-photonics/](https://apis.io/providers/effect-photonics/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for EFFECT Photonics: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/effect-photonics/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
